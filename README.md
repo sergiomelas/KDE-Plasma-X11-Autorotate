@@ -14,6 +14,8 @@ Installation Instructions:
   -cd in the subdirectory where you unzipped likr in ./KDE_Autorotate
   -Run the install.sh script
   -Reboot
+  
+  Note the installation script will replace your rc.local file if exists.
 
 Update configuration Instructions:
 
