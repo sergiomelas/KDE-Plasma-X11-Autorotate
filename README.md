@@ -31,17 +31,17 @@ Note: this software works only for Kde Plasma with X11 session
 ##################################################################################################################
 Change log:
 
-V1.0: -Initial version
-V1.1: -Added themed icons
-V1.2: -Theamed icons are chosen at install
-V1.3: -Added theme,
+1.0: -Initial version
+1.1: -Added themed icons
+1.2: -Theamed icons are chosen at install
+1.3: -Added theme,
       -State memory added
-V1.4: -Improved State Memory,
+1.4: -Improved State Memory,
       -Added Global Config
-V1.5: -Fully centralized global Config,
+1.5: -Fully centralized global Config,
       -Improved backlight management,
       -Added some themes
-V1.6: -Added timer for rotation confirmation to avoid spurius trasnsitions,
+1.6: -Added timer for rotation confirmation to avoid spurius trasnsitions,
       -Added stereo reverse in upsidedown mode,
       -Better keyboard backlight management
       -Added interactive dialogue
