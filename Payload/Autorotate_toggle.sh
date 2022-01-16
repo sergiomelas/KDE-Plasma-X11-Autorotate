@@ -1,0 +1,52 @@
+#!/bin/bash
+
+##################################################################
+#         Autorotate_toggle.sh   toggle on/off the rotation      #
+#              Developed by sergio melas 2021                    #
+##################################################################
+
+
+
+
+TOGGLE=$HOME/.autorotate/.toggle         #Toggle rotation on off
+
+SNDon=$( cat /usr/Autorotate/SNDon.conf )
+SNDoff=$( cat /usr/Autorotate/SNDoff.conf )
+
+
+if [ ! -e $TOGGLE ]; then
+
+    paplay $SNDon &
+
+    touch $TOGGLE
+
+    #change icon and refresh desktop klicking
+    cp /usr/share/icons/rstart.png /usr/share/icons/rstate.png
+    eval $(xdotool getmouselocation --shell)
+    xdotool mousemove 2 100
+    xdotool click 1
+    xdotool click 1
+    xdotool mousemove $X $Y
+    xrefresh
+
+    notify-send -t 1000 '            KDE Plasma Autorotate Enabled' -i /usr/share/icons/rstart.png
+
+else
+
+    paplay $SNDoff &
+
+    rm $TOGGLE
+
+    #change icon and refresh desktop klicking
+    cp /usr/share/icons/rstop.png /usr/share/icons/rstate.png
+    eval $(xdotool getmouselocation --shell)
+    xdotool mousemove 2 100
+    xdotool click 1
+    xdotool click 1
+    xdotool mousemove $X $Y
+    xrefresh
+
+    notify-send -t 1000 '          KDE Plasma Autorotate Disabled' -i /usr/share/icons/rstop.png
+fi
+
+pause 1
