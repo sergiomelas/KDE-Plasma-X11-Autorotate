@@ -31,19 +31,24 @@ Note: this software works only for Kde Plasma with X11 session
 ##################################################################################################################
 Change log:
 
-*1.0: -Initial version
+*1.0: 
+    -Initial version
 
-*1.1: -Added themed icons
+*1.1: 
+    -Added themed icons
 
 *1.2: -Theamed icons are chosen at install
 
-*1.3: -Added theme,
+*1.3: 
+      -Added theme,
       -State memory added
 
-*1.4: -Improved State Memory,
+*1.4: 
+      -Improved State Memory,
       -Added Global Config
 
-*1.5: -Fully centralized global Config,
+*1.5: 
+      -Fully centralized global Config,
       -Improved backlight management,
       -Added some themes
 
