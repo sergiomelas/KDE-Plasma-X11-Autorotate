@@ -14,6 +14,7 @@ SCREEN="eDP-1"
 #DIGITIZERS:Update this according to output form command: xinput list
 TOUCHSCREEN="Wacom HID 5113 Finger touch"
 PEN="Wacom HID 5113 Pen stylus"
+ERASER="Wacom HID 5113 Pen eraser"
 
 #########################################################################################
 #KEYBOARD & TOUCHPAD: Update this according to output from command: xinput list
@@ -91,6 +92,7 @@ echo $SNDrotate   | sudo tee -a /usr/Autorotate/SNDrotate.conf   > /dev/null
 echo $SCREEN      | sudo tee -a /usr/Autorotate/SCREEN.conf      > /dev/null
 echo $TOUCHSCREEN | sudo tee -a /usr/Autorotate/TOUCHSCREEN.conf > /dev/null
 echo $PEN         | sudo tee -a /usr/Autorotate/PEN.conf         > /dev/null
+echo $ERASER      | sudo tee -a /usr/Autorotate/ERASER.conf      > /dev/null
 echo $KEYBKLIGHT  | sudo tee -a /usr/Autorotate/KEYBKLIGHT.conf  > /dev/null
 echo $SCRBKLIGHT  | sudo tee -a /usr/Autorotate/SCRBKLIGHT.conf  > /dev/null
 echo $SINK        | sudo tee -a /usr/Autorotate/SINK.conf        > /dev/null

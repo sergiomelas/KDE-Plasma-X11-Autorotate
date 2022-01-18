@@ -27,6 +27,7 @@ SNDrotate=$( cat /usr/Autorotate/SNDrotate.conf )
 SCREEN=$( cat /usr/Autorotate/SCREEN.conf )
 TOUCHSCREEN=$( cat /usr/Autorotate/TOUCHSCREEN.conf )
 PEN=$( cat /usr/Autorotate/PEN.conf )
+ERASER=$( cat /usr/Autorotate/ERASER.conf )
 KEYBKLIGHT=$( cat /usr/Autorotate/KEYBKLIGHT.conf )
 SCRBKLIGHT=$( cat /usr/Autorotate/SCRBKLIGHT.conf )
 SINK=$( cat /usr/Autorotate/SINK.conf )
@@ -88,6 +89,7 @@ do
                xrandr --output $SCREEN  --rotate left &
                xinput set-prop "$TOUCHSCREEN"    "$TRANSFORM" 0 -1 1 1 0 0 0 0 1
                xinput set-prop "$PEN"            "$TRANSFORM" 0 -1 1 1 0 0 0 0 1
+               xinput set-prop "$ERASER"         "$TRANSFORM" 0 -1 1 1 0 0 0 0 1
 
 
                #Start On screen Keyboard
@@ -133,8 +135,9 @@ do
 
                #rotate screen pen and touchscreen
                xrandr --output $SCREEN --rotate right &
-               xinput set-prop "$TOUCHSCREEN"    "$TRANSFORM" 0 1 0 -1 0 1 0 0 1 &
-               xinput set-prop "$PEN"            "$TRANSFORM" 0 1 0 -1 0 1 0 0 1 &
+               xinput set-prop "$TOUCHSCREEN"    "$TRANSFORM" 0 1 0 -1 0 1 0 0 1
+               xinput set-prop "$PEN"            "$TRANSFORM" 0 1 0 -1 0 1 0 0 1
+               xinput set-prop "$ERASER"         "$TRANSFORM" 0 1 0 -1 0 1 0 0 1
 
                #Start On screen Keyboard
                onboard &
@@ -175,8 +178,9 @@ do
 
                #rotate screen pen and touchscreen
                xrandr --output $SCREEN --rotate inverted &
-               xinput set-prop "$TOUCHSCREEN"    "$TRANSFORM" -1 0 1 0 -1 1 0 0 1 &
-               xinput set-prop "$PEN"            "$TRANSFORM" -1 0 1 0 -1 1 0 0 1 &
+               xinput set-prop "$TOUCHSCREEN"    "$TRANSFORM" -1 0 1 0 -1 1 0 0 1
+               xinput set-prop "$PEN"            "$TRANSFORM" -1 0 1 0 -1 1 0 0 1
+               xinput set-prop "$ERASER"         "$TRANSFORM" -1 0 1 0 -1 1 0 0 1
 
                #Add reverse stereo to sound profiles
                pactl load-module module-remap-sink sink_name=Reverse master=$SINK channels=2 master_channel_map=front-left,front-right channel_map=front-right,front-left
@@ -207,8 +211,10 @@ do
 
                #Rotate Screen and Touch and pen to Normal
                xrandr --output $SCREEN --rotate normal &
-               xinput set-prop "$TOUCHSCREEN"    "$TRANSFORM" 1 0 0 0 1 0 0 0 1 &
-               xinput set-prop "$PEN"            "$TRANSFORM" 1 0 0 0 1 0 0 0 1 &
+               xinput set-prop "$TOUCHSCREEN"    "$TRANSFORM" 1 0 0 0 1 0 0 0 1
+               xinput set-prop "$PEN"            "$TRANSFORM" 1 0 0 0 1 0 0 0 1
+               xinput set-prop "$ERASER"         "$TRANSFORM" 1 0 0 0 1 0 0 0 1
+
 
 
 
@@ -247,8 +253,6 @@ do
         fi
      fi
 
-     sleep 0.05
-
      #if rotating down force sound output
      if [ -e $MDOWN ];
      then
@@ -256,6 +260,9 @@ do
         pactl set-default-sink Reverse
         #Alwais force reverse volume
         pactl set-sink-volume Reverse 100%
+        sleep 0.05
+     else
+        sleep 0.01
      fi
    else
      sleep 0.25
