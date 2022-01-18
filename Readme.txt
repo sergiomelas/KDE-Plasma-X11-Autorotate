@@ -42,5 +42,8 @@ V1.5: -Fully centralized global Config,
       -Added some themes
 V1.6: -Added timer for rotation confirmation to avoid spurius trasnsitions,
       -Added stereo reverse in upsidedown mode,
-      -Better keyboard backlight management
+      -Better keyboard backlight management,
       -Added interactive dialogue
+V1.7: -Added full support for stilus digitize,
+      -Improved Sound Management
+
