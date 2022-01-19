@@ -49,7 +49,7 @@ scbrit=$(cat  $SCRBKLIGHT)
 
 echo run
 
-#Scan for orientation changes and if cative execute them
+#Scan for orientation changes and if active execute them
 while :
 do
 
@@ -256,7 +256,7 @@ do
      #if rotating down force sound output
      if [ -e $MDOWN ];
      then
-        #Put sound to normal
+        #Put sound to reverse
         pactl set-default-sink Reverse
         #Alwais force reverse volume
         pactl set-sink-volume Reverse 100%
