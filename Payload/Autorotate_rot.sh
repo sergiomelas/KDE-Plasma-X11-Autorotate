@@ -22,7 +22,7 @@ MLEFT=$HOME/.autorotate/.mleft            #Toggle last rotation left
 MRIGHT=$HOME/.autorotate/.mright          #Toggle last rotation right
 MDOWN=$HOME/.autorotate/.mdown            #Toggle last rotation down
 
-
+#Read COnfiguration
 SNDrotate=$( cat /usr/Autorotate/SNDrotate.conf )
 SCREEN=$( cat /usr/Autorotate/SCREEN.conf )
 TOUCHSCREEN=$( cat /usr/Autorotate/TOUCHSCREEN.conf )
@@ -36,6 +36,7 @@ ID2=$( cat /usr/Autorotate/ID2.conf )
 ID3=$( cat /usr/Autorotate/ID3.conf )
 ID4=$( cat /usr/Autorotate/ID4.conf )
 
+#Initialize Memory of rotatio
 rm $MUP
 rm $MLEFT
 rm $MRIGHT
@@ -49,7 +50,7 @@ scbrit=$(cat  $SCRBKLIGHT)
 
 echo run
 
-#Scan for orientation changes and if active execute them
+#Scan for orientation changes and if cative execute them
 while :
 do
 
@@ -256,20 +257,20 @@ do
      #if rotating down force sound output
      if [ -e $MDOWN ];
      then
-        #Put sound to reverse
+        #Put sound to Resverse
         pactl set-default-sink Reverse
         #Alwais force reverse volume
         pactl set-sink-volume Reverse 100%
         sleep 0.05
      else
-        sleep 0.01
+        sleep 0.1
      fi
    else
-     sleep 0.25
+     sleep 1
    fi
 
 
-   #Activate left click
+   #Activate left click workaround
    xsetwacom --set   "$TOUCHSCREEN"    Gesture off
 
 done

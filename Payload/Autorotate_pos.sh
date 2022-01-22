@@ -121,7 +121,7 @@ do
 
    if [ -e $TOGGLE ] #If autorotate is active
    then
-     sleep 0.05
+     sleep 0.5
    else
      sleep 1
    fi
