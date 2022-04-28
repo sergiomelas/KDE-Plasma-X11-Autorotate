@@ -45,6 +45,7 @@ V1.6: -Added timer for rotation confirmation to avoid spurius trasnsitions,
 V1.7: -Added full support for stilus digitize,  
       -Improved Sound Management  
 V1.8: -removed icon acess from rclocal
+
 V1.9: -Added forced stop in toggle, added autochange directory in install
 
 -
