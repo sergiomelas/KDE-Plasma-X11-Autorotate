@@ -14,6 +14,16 @@ SNDon=$( cat /usr/Autorotate/SNDon.conf )
 SNDoff=$( cat /usr/Autorotate/SNDoff.conf )
 
 
+if  [ $1 = "-stop" ]; then
+    echo stopping
+    rm $TOGGLE
+
+    #change icon and refresh desktop klicking
+    cp /usr/share/icons/rstop.png /usr/share/icons/rstate.png
+    exit 0
+fi
+
+
 if [ ! -e $TOGGLE ]; then
 
     paplay $SNDon &
@@ -30,8 +40,13 @@ if [ ! -e $TOGGLE ]; then
     xrefresh
 
     notify-send -t 1000 '            KDE Plasma Autorotate Enabled' -i /usr/share/icons/rstart.png
+    #Start up rotation sensor and rotator
+    bash '/usr/bin/Autorotate_rot.sh'  &
+    spleep 1
+    exit 0
+fi
 
-else
+if [ -e $TOGGLE ]; then
 
     paplay $SNDoff &
 
@@ -47,6 +62,8 @@ else
     xrefresh
 
     notify-send -t 1000 '          KDE Plasma Autorotate Disabled' -i /usr/share/icons/rstop.png
+    spleep 1
+    exit 0
 fi
 
-pause 1
+

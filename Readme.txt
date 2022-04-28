@@ -6,7 +6,6 @@
                      ##################################################################
 
 Installation Instructions:
-
   -Unzip the file
   -Edit "Autorotate_conf.sh" configuration file in the Payload sub directory, to match the config of your system
   -Open terminal
@@ -22,8 +21,6 @@ Update configuration Instructions:
 Removal Instructions:
 
   -To unistall run remove.sh
-
-
 
 Note: this software works only for Kde Plasma with X11 session
 
@@ -44,6 +41,8 @@ V1.6: -Added timer for rotation confirmation to avoid spurius trasnsitions,
       -Added stereo reverse in upsidedown mode,
       -Better keyboard backlight management,
       -Added interactive dialogue
-V1.7: -Added full support for stilus digitize,
+V1.7: -Added full support for stilus digitizer,
       -Improved Sound Management
+V1.8: -removed icon acess from rclocal
+V1.9: -Added forced stop in toggle, added autochange directory in install
 

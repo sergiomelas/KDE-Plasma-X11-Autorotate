@@ -6,6 +6,9 @@
 ##################################################################
 
 
+#change icon at stop
+trap "cp /usr/share/icons/rstop.png /usr/share/icons/rstate.png" INT
+
 #Initialize Global Variables
 TRANSFORM='Coordinate Transformation Matrix'
 TOGGLE=$HOME/.autorotate/.toggle         #Toggle rotation on off
@@ -22,6 +25,8 @@ MLEFT=$HOME/.autorotate/.mleft            #Toggle last rotation left
 MRIGHT=$HOME/.autorotate/.mright          #Toggle last rotation right
 MDOWN=$HOME/.autorotate/.mdown            #Toggle last rotation down
 
+
+
 #Read COnfiguration
 SNDrotate=$( cat /usr/Autorotate/SNDrotate.conf )
 SCREEN=$( cat /usr/Autorotate/SCREEN.conf )
@@ -35,12 +40,9 @@ ID1=$( cat /usr/Autorotate/ID1.conf )
 ID2=$( cat /usr/Autorotate/ID2.conf )
 ID3=$( cat /usr/Autorotate/ID3.conf )
 ID4=$( cat /usr/Autorotate/ID4.conf )
+INIBIT=$( cat /usr/Autorotate/INIBIT.conf )
 
-#Initialize Memory of rotatio
-rm $MUP
-rm $MLEFT
-rm $MRIGHT
-rm $MDOWN
+
 
 
 #Memorise Screen and Keybord britgtness
@@ -48,10 +50,13 @@ kbbrit=$(cat  $KEYBKLIGHT)
 scbrit=$(cat  $SCRBKLIGHT)
 
 
+bash '/usr/bin/Autorotate_pos.sh'  &
+pause 0.5
+
 echo run
 
 #Scan for orientation changes and if cative execute them
-while :
+while [ -e $TOGGLE ]
 do
 
    if [ -e $TOGGLE ] #If autorotate is active
@@ -96,10 +101,12 @@ do
                #Start On screen Keyboard
                onboard &
 
-               #Remove reverse stereo from sound profiles
-                pactl set-default-sink $SINK
-                pactl unload-module module-remap-sink
-
+               if [ ! -e $INIBIT ] #If no inibit sound
+               then
+                 #Remove reverse stereo from sound profiles
+                 pactl set-default-sink $SINK
+                 pactl unload-module module-remap-sink
+               fi
 
                #Memorise Left state
                rm $MUP
@@ -143,9 +150,12 @@ do
                #Start On screen Keyboard
                onboard &
 
-               #Remove reverse stereo from sound profiles
-               pactl set-default-sink $SINK
-               pactl unload-module module-remap-sink
+               if [ ! -e $INIBIT ] #If no inibit sound
+               then
+                 #Remove reverse stereo from sound profiles
+                 pactl set-default-sink $SINK
+                 pactl unload-module module-remap-sink
+               fi
 
                #Memorise Right state
                rm $MUP
@@ -183,11 +193,16 @@ do
                xinput set-prop "$PEN"            "$TRANSFORM" -1 0 1 0 -1 1 0 0 1
                xinput set-prop "$ERASER"         "$TRANSFORM" -1 0 1 0 -1 1 0 0 1
 
-               #Add reverse stereo to sound profiles
-               pactl load-module module-remap-sink sink_name=Reverse master=$SINK channels=2 master_channel_map=front-left,front-right channel_map=front-right,front-left
-               pactl set-default-sink Reverse
-               pactl set-sink-volume Reverse 100%
+               if [ ! -e $INIBIT ] #If no inibit sound
+               then
+                 #Add reverse stereo to sound profiles
+                 pactl load-module module-remap-sink sink_name=Reverse master=$SINK \
+                 channels=2 master_channel_map=front-left,front-right channel_map=front-right,front-left \
+                 sink_properties="device.description='Reverse-Stereo'"
 
+                 pactl set-default-sink Reverse
+                 pactl set-sink-volume Reverse 100%
+               fi
 
                #Memorise Down state
                rm $MUP
@@ -234,9 +249,12 @@ do
                fi
 
 
-               #Remove reverse stereo from sound profiles
-               pactl set-default-sink $SINK
-               pactl unload-module module-remap-sink
+               if [ ! -e $INIBIT ] #If no inibit sound
+               then
+                 #Remove reverse stereo from sound profiles
+                 pactl set-default-sink $SINK
+                 pactl unload-module module-remap-sink
+               fi
 
                #Memorise Normal state
                touch $MUP
@@ -249,6 +267,10 @@ do
             rm $MROT
             sleep 2
             #Restore screen  backlight
+            if [[ $scbrit -lt 300 ]]
+            then
+              scbrit=300
+            fi
             echo $scbrit > $SCRBKLIGHT
 
         fi
@@ -257,11 +279,14 @@ do
      #if rotating down force sound output
      if [ -e $MDOWN ];
      then
-        #Put sound to Resverse
-        pactl set-default-sink Reverse
-        #Alwais force reverse volume
-        pactl set-sink-volume Reverse 100%
-        sleep 0.05
+           if [ ! -e $INIBIT ] #If no inibit sound
+           then
+             #Put sound to Resverse
+             pactl set-default-sink Reverse
+             #Alwais force reverse volume
+             pactl set-sink-volume Reverse 100%
+           fi
+           sleep 0.05
      else
         sleep 0.1
      fi
@@ -274,3 +299,6 @@ do
    xsetwacom --set   "$TOUCHSCREEN"    Gesture off
 
 done
+
+
+

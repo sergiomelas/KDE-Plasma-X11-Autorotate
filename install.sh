@@ -7,12 +7,17 @@ echo  " #    Autorotate Script with Keyboard and Touchpad management     #"
 echo  " #    Developed for X11 & KDE Plasma  by sergio melas 2021-22     #"
 echo  " #                                                                #"
 echo  " #                Emai: sergiomelas@gmail.com                     #"
-echo  " #                   Released under GPV V3.0                       #"
+echo  " #                   Released unde GPV V3.0                       #"
 echo  " #                                                                #"
 echo  " ##################################################################"
 echo  " "
 
 echo  ""
+
+VAR=$0
+DIR="$(dirname "${VAR}")"
+cd  "${DIR}"
+
 echo -n "Did you prepared config file  (y/N)? "
 read resp
 
@@ -103,7 +108,9 @@ do
        sudo cp ./Payload/Theme_1/rstate.png /usr/share/icons/
        ;;
    esac
-
+   sudo chmod 777 /usr/share/icons/rstate.png
+   sudo chmod 777 /usr/share/icons/rstart.png
+   sudo chmod 777 /usr/share/icons/rstop.png
 
    notify-send -t 5000 '             Chosen Iconset' -i /usr/share/icons/rstop.png &
    echo  ""
@@ -133,12 +140,10 @@ sudo mkdir /usr/Autorotate
 
 #Install Stuff
 sudo cp ./Payload/rc.local /etc/
-sudo cp ./Payload/Autorotate_sincro_startup.desktop /etc/xdg/autostart/
 sudo cp ./Payload/Autorotate.desktop /usr/share/applications/
 sudo cp ./Payload/Autorotate_toggle.sh /usr/bin/
 sudo cp ./Payload/Autorotate_pos.sh /usr/bin/
 sudo cp ./Payload/Autorotate_rot.sh /usr/bin/
-sudo cp ./Payload/Autorotate_sincro_startup.sh /usr/bin/
 cp ./Payload/Autorotate.desktop  $HOME/Desktop
 
 #finish config

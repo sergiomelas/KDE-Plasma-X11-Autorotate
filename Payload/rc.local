@@ -13,7 +13,5 @@ SCRBKLIGHT=$( cat /usr/Autorotate/SCRBKLIGHT.conf )
 #change permissions
 chmod 777 $KEYBKLIGHT
 chmod 777 $SCRBKLIGHT
-chmod 777 /usr/share/icons/rstate.png
-chmod 777 /usr/share/icons/rstart.png
-chmod 777 /usr/share/icons/rstop.png
+
 

@@ -11,12 +11,10 @@ killall    bash
 
 sudo rm  /etc/rc.local
 sudo rm -r /usr/Autorotate
-sudo rm  /etc/xdg/autostart/Autorotate_sincro_startup.desktop
 sudo rm -r $HOME/.autorotate
 sudo rm  /usr/bin/Autorotate_toggle.sh
 sudo rm  /usr/bin/Autorotate_pos.sh
 sudo rm  /usr/bin/Autorotate_rot.sh
-sudo rm  /usr/bin/Autorotate_sincro_startup.sh
 sudo rm  /usr/share/applications/Autorotate.desktop
 sudo rm  /usr/share/icons/rstart.png
 sudo rm  /usr/share/icons/rstop.png

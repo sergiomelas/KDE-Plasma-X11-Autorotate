@@ -19,13 +19,11 @@ MLEFT=$HOME/.autorotate/.mleft            #Toggle last rotation left
 MRIGHT=$HOME/.autorotate/.mright          #Toggle last rotation right
 MDOWN=$HOME/.autorotate/.mdown            #Toggle last rotation down
 
-
-
-#Reset Position state
-rm $CUP
-rm $CLEFT
-rm $CRIGHT
-rm $CDOWN
+#Avoid first rotation
+#rm $MUP
+#rm $MLEFT
+#rm $MRIGHT
+#rm $MDOWN
 
 echo run
 
@@ -119,13 +117,7 @@ do
         echo NORMAL
    fi
 
-   if [ -e $TOGGLE ] #If autorotate is active
-   then
-     sleep 0.5
-   else
-     sleep 1
-   fi
-
+   sleep 0.5
 
 
 done

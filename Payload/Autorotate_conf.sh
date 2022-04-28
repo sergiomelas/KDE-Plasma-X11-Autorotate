@@ -47,8 +47,9 @@ SNDon=/usr/share/sounds/freedesktop/stereo/service-login.oga
 SNDoff=/usr/share/sounds/freedesktop/stereo/service-logout.oga
 SNDrotate=/usr/share/sounds/freedesktop/stereo/window-attention.oga
 
-
-
+#####################################OPTIONAL############################################
+#SOUNDS: Sound inibition file
+INIBIT=$HOME/.stereo/.toggle
 
 
 
@@ -100,4 +101,4 @@ echo $ID1         | sudo tee -a /usr/Autorotate/ID1.conf         > /dev/null
 echo $ID2         | sudo tee -a /usr/Autorotate/ID2.conf         > /dev/null
 echo $ID3         | sudo tee -a /usr/Autorotate/ID3.conf         > /dev/null
 echo $ID4         | sudo tee -a /usr/Autorotate/ID4.conf         > /dev/null
-
+echo $INIBIT      | sudo tee -a /usr/Autorotate/INIBIT.conf      > /dev/null
