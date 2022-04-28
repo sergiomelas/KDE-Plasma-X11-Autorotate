@@ -46,3 +46,5 @@ V1.7: -Added full support for stilus digitize,
       -Improved Sound Management  
 V1.8: -removed icon acess from rclocal
 V1.9: -Added forced stop in toggle, added autochange directory in install
+
+-
