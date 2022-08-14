@@ -8,19 +8,19 @@
 #SCREEN: Update this according to output form command: xrandr|grep "connected primary"
 # xxxx connected primary ......
 #SCREEN="xxxx"
-SCREEN="eDP-1"
+SCREEN="eDP"
 
 #########################################################################################
 #DIGITIZERS:Update this according to output form command: xinput list
-TOUCHSCREEN="Wacom HID 5113 Finger touch"
-PEN="Wacom HID 5113 Pen stylus"
-ERASER="Wacom HID 5113 Pen eraser"
+TOUCHSCREEN="Wacom HID 52AE Finger touch"
+PEN="Wacom HID 52AE Pen stylus"
+ERASER="Wacom HID 52AE Pen eraser"
 
 #########################################################################################
 #KEYBOARD & TOUCHPAD: Update this according to output from command: xinput list
 #keyboard   (ID1=id=# ,ID2=[slave  keyboard (#)] at the line "keyboard" for ID1 ID2
 #Touch Pad  (ID3=id=# ,ID4=[slave  pointer  (#)] at the line "pointer"  for ID3 ID4
-ID1=15
+ID1=14
 ID2=3
 ID3=13
 ID4=2
@@ -28,18 +28,19 @@ ID4=2
 #########################################################################################
 #KEYBOARD BACKLIGHT:Update this according to output form command: ls /sys/class/leds/
 #add "/brightness" at the end,ie :/sys/class/leds/<KEYBOARD BACKLIGHT>/brightness
-KEYBKLIGHT=/sys/class/leds/platform::kbd_backlight/brightness
+KEYBKLIGHT=/sys/class/leds/input15::kana/brightness
 
 #########################################################################################
 #SCREEN BACKLIGHT:Update this according to output form command: ls /sys/class/backlight/
 #add "/brightness" at the end,ie :/sys/class/backlight/<SCREEN BACKLIGHT>/brightness
-SCRBKLIGHT=/sys/class/backlight/intel_backlight/brightness
+SCRBKLIGHT=/sys/class/backlight/amdgpu_bl0/brightness
 
 #########################################################################################
-#SOUND:Update this acordigli with, using yyyyyyyyyyyyyyyyyyyyyyyyyyy:
-#pactl list sinks short
-#xx   yyyyyyyyyyyyyyyyyyyyyyyyyyy     ....
-SINK=alsa_output.pci-0000_00_1f.3.analog-stereo
+#SOUND:Update this according to output form command:pactl list sinks short
+#xx   yyyyyyyyyyyyyyyyyyyyyyyyyyy
+#using yyyyyyyyyyyyyyyyyyyyyyyyyyy:
+#Note if using pulseeffect use it instead of phisical output
+SINK=PulseEffects_apps
 
 #####################################OPTIONAL############################################
 #SOUNDS: activation, desactivation, each rotation

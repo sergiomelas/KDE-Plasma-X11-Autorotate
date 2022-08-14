@@ -67,15 +67,14 @@ do
          sleep 1    #Timer to be shure rotation is not a wiggle
          if [ -e $MROT ] #If rotation confirmed
          then
-
+            #Memorise Screen and Keybord britgtness and switch off
+            scbrit=$(cat  $SCRBKLIGHT)
+            kbbrit=$(cat  $KEYBKLIGHT)
             if [ -e $CLEFT ] #If rotation left
             then
                #play sound
                paplay $SNDrotate &
 
-               #Memorise Screen and Keybord britgtness and switch off
-               scbrit=$(cat  $SCRBKLIGHT)
-               kbbrit=$(cat  $KEYBKLIGHT)
                echo 0 > $SCRBKLIGHT
                if [[ $kbbrit -gt 0 ]]
                then
@@ -84,6 +83,7 @@ do
 
                #Kill Dock
                killall latte-dock
+               killall plank
                #Kill on screen keyboard
                killall onboard
 
@@ -123,9 +123,6 @@ do
                #play sound
                paplay $SNDrotate &
 
-               #Memorise Screen and Keybord britgtness and switch off
-               scbrit=$(cat  $SCRBKLIGHT)
-               kbbrit=$(cat  $KEYBKLIGHT)
                echo 0 > $SCRBKLIGHT
                if [[ $kbbrit -gt 0 ]]
                then
@@ -134,6 +131,7 @@ do
 
                #Kill Dock
                killall latte-dock
+               killall plank
                #Kill on screen keyboard
                killall onboard
 
@@ -169,9 +167,7 @@ do
                #play sound
                paplay $SNDrotate &
 
-               #Memorise Screen and Keybord britgtness and switch off
-               scbrit=$(cat  $SCRBKLIGHT)
-               kbbrit=$(cat  $KEYBKLIGHT)
+
                echo 0 > $SCRBKLIGHT
                if [[ $kbbrit -gt 0 ]]
                then
@@ -180,6 +176,7 @@ do
 
                #Kill Dock
                killall latte-dock
+               killall plank
                #Kill on screen keyboard
                killall onboard
 
@@ -222,6 +219,7 @@ do
 
                #Kill Dock
                killall latte-dock
+               killall plank
                #Kill on screen keyboard
                killall onboard
 
@@ -236,7 +234,7 @@ do
 
                #Start dock
                latte-dock --replace &
-
+               plank
 
                #Start Keyboard and Touchpad
                xinput reattach $ID1 $ID2 &
@@ -267,9 +265,9 @@ do
             rm $MROT
             sleep 2
             #Restore screen  backlight
-            if [[ $scbrit -lt 300 ]]
+            if [[ $scbrit -lt 10 ]]
             then
-              scbrit=300
+              scbrit=10
             fi
             echo $scbrit > $SCRBKLIGHT
 
@@ -296,7 +294,7 @@ do
 
 
    #Activate left click workaround
-   xsetwacom --set   "$TOUCHSCREEN"    Gesture off
+   #xsetwacom --set   "$TOUCHSCREEN"    Gesture off
 
 done
 

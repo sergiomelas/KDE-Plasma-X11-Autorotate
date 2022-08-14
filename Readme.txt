@@ -12,6 +12,9 @@ Installation Instructions:
   -cd in the subdirectory where you unzipped likr in ./KDE_Autorotate
   -Run the install.sh script
   -Reboot
+  -Install tablet support for KDE
+    sudo apt-get install kde-config-tablet
+    Configure:/Settings/Input Devices/Graphic Tablet: Check "Auto-Rotate With Screen" and "Invert Auto-Rotation"
 
 Update configuration Instructions:
 
@@ -45,4 +48,5 @@ V1.7: -Added full support for stilus digitizer,
       -Improved Sound Management
 V1.8: -removed icon acess from rclocal
 V1.9: -Added forced stop in toggle, added autochange directory in install
+V2.0  -Added support for plank and pulseaudio
 
