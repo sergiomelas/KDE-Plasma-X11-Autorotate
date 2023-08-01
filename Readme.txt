@@ -48,6 +48,7 @@ V1.7: -Added full support for stilus digitizer,
 V1.8: -Removed icon acess from rclocal
 V1.9: -Added forced stop in toggle, added autochange directory in install
 V2.0  -Added support for plank and pulseaudio
-V2.1  -Addesd support for Pipewire and Easy effects, improved sincronization of rotation with hand shake, Removed backlight managenet because nice to have and creating to many bugs
-
-
+V2.1  -Addesd support for Pipewire and Easy effects,
+      -improved sincronization of rotation with hand shake,
+      -Removed backlight managenet because nice to have and creating to many bugs
+      -Corrected Bug on processes
