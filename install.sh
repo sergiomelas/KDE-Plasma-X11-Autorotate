@@ -4,7 +4,7 @@
 echo  " "
 echo  " ##################################################################"
 echo  " #    Autorotate Script with Keyboard and Touchpad management     #"
-echo  " #    Developed for X11 & KDE Plasma  by sergio melas 2021-22     #"
+echo  " #    Developed for X11 & KDE Plasma  by sergio melas 2021-23     #"
 echo  " #                                                                #"
 echo  " #                Emai: sergiomelas@gmail.com                     #"
 echo  " #                   Released unde GPV V3.0                       #"
