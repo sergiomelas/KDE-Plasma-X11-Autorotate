@@ -1,7 +1,7 @@
 #!/bin/bash
             ##################################################################
             #               Autorotate Configuration file                    #
-            #              Developed by sergio melas  2021                   #
+            #              Developed by sergio melas  2021-23                #
             ##################################################################
 
 #########################################################################################
@@ -12,17 +12,17 @@ SCREEN="eDP"
 
 #########################################################################################
 #DIGITIZERS:Update this according to output form command: xinput list
-TOUCHSCREEN="Wacom HID 52AE Finger touch"
-PEN="Wacom HID 52AE Pen stylus"
-ERASER="Wacom HID 52AE Pen eraser"
+TOUCHSCREEN="Wacom HID 524D Finger touch"
+PEN="Wacom HID 524D Pen stylus"
+ERASER="Wacom HID 524D Pen eraser"
 
 #########################################################################################
 #KEYBOARD & TOUCHPAD: Update this according to output from command: xinput list
 #keyboard   (ID1=id=# ,ID2=[slave  keyboard (#)] at the line "keyboard" for ID1 ID2
 #Touch Pad  (ID3=id=# ,ID4=[slave  pointer  (#)] at the line "pointer"  for ID3 ID4
-ID1=14
+ID1=13
 ID2=3
-ID3=13
+ID3=12
 ID4=2
 
 #########################################################################################
@@ -30,18 +30,14 @@ ID4=2
 #add "/brightness" at the end,ie :/sys/class/leds/<KEYBOARD BACKLIGHT>/brightness
 KEYBKLIGHT=/sys/class/leds/input15::kana/brightness
 
-#########################################################################################
-#SCREEN BACKLIGHT:Update this according to output form command: ls /sys/class/backlight/
-#add "/brightness" at the end,ie :/sys/class/backlight/<SCREEN BACKLIGHT>/brightness
-SCRBKLIGHT=/sys/class/backlight/amdgpu_bl0/brightness
 
 #########################################################################################
 #SOUND:Update this according to output form command:pactl list sinks short
 #xx   yyyyyyyyyyyyyyyyyyyyyyyyyyy
 #using yyyyyyyyyyyyyyyyyyyyyyyyyyy:
-#Note if using pulseeffect use it instead of phisical output
-SINK=PulseEffects_apps
-
+#Note if using pulseeffect or easyeffects use it instead of phisical output
+SINK=alsa_output.pci-0000_03_00.6.HiFi__hw_Generic_1__sink
+SINK=easyeffects_sink
 #####################################OPTIONAL############################################
 #SOUNDS: activation, desactivation, each rotation
 SNDon=/usr/share/sounds/freedesktop/stereo/service-login.oga
@@ -51,30 +47,6 @@ SNDrotate=/usr/share/sounds/freedesktop/stereo/window-attention.oga
 #####################################OPTIONAL############################################
 #SOUNDS: Sound inibition file
 INIBIT=$HOME/.stereo/.toggle
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -96,7 +68,6 @@ echo $TOUCHSCREEN | sudo tee -a /usr/Autorotate/TOUCHSCREEN.conf > /dev/null
 echo $PEN         | sudo tee -a /usr/Autorotate/PEN.conf         > /dev/null
 echo $ERASER      | sudo tee -a /usr/Autorotate/ERASER.conf      > /dev/null
 echo $KEYBKLIGHT  | sudo tee -a /usr/Autorotate/KEYBKLIGHT.conf  > /dev/null
-echo $SCRBKLIGHT  | sudo tee -a /usr/Autorotate/SCRBKLIGHT.conf  > /dev/null
 echo $SINK        | sudo tee -a /usr/Autorotate/SINK.conf        > /dev/null
 echo $ID1         | sudo tee -a /usr/Autorotate/ID1.conf         > /dev/null
 echo $ID2         | sudo tee -a /usr/Autorotate/ID2.conf         > /dev/null

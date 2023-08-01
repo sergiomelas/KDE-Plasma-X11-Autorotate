@@ -2,12 +2,16 @@
 
 ##################################################################
 #          Autorotate_rot.sh   Rotate acreen                     #
-#              Developed by sergio melas 2021                    #
+#              Developed by sergio melas 2021-23                 #
 ##################################################################
 
 
 #change icon at stop
-trap "cp /usr/share/icons/rstop.png /usr/share/icons/rstate.png" INT
+trap "cp /usr/share/icons/rstop.png /usr/share/icons/rstate.png" EXIT
+#Kill all child procese
+trap 'jobs -p | xargs kill' EXIT
+
+#
 
 #Initialize Global Variables
 TRANSFORM='Coordinate Transformation Matrix'
@@ -34,7 +38,6 @@ TOUCHSCREEN=$( cat /usr/Autorotate/TOUCHSCREEN.conf )
 PEN=$( cat /usr/Autorotate/PEN.conf )
 ERASER=$( cat /usr/Autorotate/ERASER.conf )
 KEYBKLIGHT=$( cat /usr/Autorotate/KEYBKLIGHT.conf )
-SCRBKLIGHT=$( cat /usr/Autorotate/SCRBKLIGHT.conf )
 SINK=$( cat /usr/Autorotate/SINK.conf )
 ID1=$( cat /usr/Autorotate/ID1.conf )
 ID2=$( cat /usr/Autorotate/ID2.conf )
@@ -47,7 +50,7 @@ INIBIT=$( cat /usr/Autorotate/INIBIT.conf )
 
 #Memorise Screen and Keybord britgtness
 kbbrit=$(cat  $KEYBKLIGHT)
-scbrit=$(cat  $SCRBKLIGHT)
+
 
 
 bash '/usr/bin/Autorotate_pos.sh'  &
@@ -64,18 +67,19 @@ do
 
       if [ -e $MROT ] #If rotation not done
       then
-         sleep 1    #Timer to be shure rotation is not a wiggle
+         sleep 0.1   #Timer to be shure rotation is not a wiggle
          if [ -e $MROT ] #If rotation confirmed
          then
-            #Memorise Screen and Keybord britgtness and switch off
-            scbrit=$(cat  $SCRBKLIGHT)
+            #Memorise Keybord britgtness and switch off
             kbbrit=$(cat  $KEYBKLIGHT)
+
+
             if [ -e $CLEFT ] #If rotation left
             then
                #play sound
                paplay $SNDrotate &
 
-               echo 0 > $SCRBKLIGHT
+
                if [[ $kbbrit -gt 0 ]]
                then
                   echo 0 > $KEYBKLIGHT
@@ -123,7 +127,6 @@ do
                #play sound
                paplay $SNDrotate &
 
-               echo 0 > $SCRBKLIGHT
                if [[ $kbbrit -gt 0 ]]
                then
                   echo 0 > $KEYBKLIGHT
@@ -168,7 +171,6 @@ do
                paplay $SNDrotate &
 
 
-               echo 0 > $SCRBKLIGHT
                if [[ $kbbrit -gt 0 ]]
                then
                   echo 0 > $KEYBKLIGHT
@@ -189,6 +191,9 @@ do
                xinput set-prop "$TOUCHSCREEN"    "$TRANSFORM" -1 0 1 0 -1 1 0 0 1
                xinput set-prop "$PEN"            "$TRANSFORM" -1 0 1 0 -1 1 0 0 1
                xinput set-prop "$ERASER"         "$TRANSFORM" -1 0 1 0 -1 1 0 0 1
+
+               #Start On screen Keyboard
+               onboard &
 
                if [ ! -e $INIBIT ] #If no inibit sound
                then
@@ -214,8 +219,6 @@ do
                #play sound
                paplay $SNDrotate &
 
-               #Screen switch off
-               echo 0 > $SCRBKLIGHT
 
                #Kill Dock
                killall latte-dock
@@ -264,12 +267,9 @@ do
 
             rm $MROT
             sleep 2
-            #Restore screen  backlight
-            if [[ $scbrit -lt 10 ]]
-            then
-              scbrit=10
-            fi
-            echo $scbrit > $SCRBKLIGHT
+            #Restore keyboard  backlight
+            echo $kbbrit > $KEYBKLIGHT
+
 
         fi
      fi
@@ -289,7 +289,7 @@ do
         sleep 0.1
      fi
    else
-     sleep 1
+     sleep 0.1
    fi
 
 

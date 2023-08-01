@@ -2,7 +2,7 @@
 
 ##################################################################
 #         Autorotate_toggle.sh   toggle on/off the rotation      #
-#              Developed by sergio melas 2021                    #
+#              Developed by sergio melas 2021-23                 #
 ##################################################################
 
 

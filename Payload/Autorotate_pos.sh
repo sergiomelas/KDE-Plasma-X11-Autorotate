@@ -2,7 +2,7 @@
 
 ##################################################################
 #          Autorotate_pos.sh   Calculate position of the pc      #
-#              Developed by sergio melas 2021                    #
+#              Developed by sergio melas 2021-23                 #
 ##################################################################
 
 
@@ -19,11 +19,10 @@ MLEFT=$HOME/.autorotate/.mleft            #Toggle last rotation left
 MRIGHT=$HOME/.autorotate/.mright          #Toggle last rotation right
 MDOWN=$HOME/.autorotate/.mdown            #Toggle last rotation down
 
-#Avoid first rotation
-#rm $MUP
-#rm $MLEFT
-#rm $MRIGHT
-#rm $MDOWN
+TOGGLE=$HOME/.autorotate/.toggle         #Toggle rotation on off
+
+
+
 
 echo run
 
@@ -38,12 +37,14 @@ do
    if [[ $line =~ .*left-up.* ]] #If left up
    then
 
-        #manage if rotation necessary
+        #manage if rotation if necessary
         if [ ! -e $MLEFT ];
         then
            touch $MROT
-        else
-           rm $MROT
+           while [ ! -e $MROT ]
+           do
+             pause 0.1
+           done
         fi
 
         #Activate  Left rotation
@@ -62,8 +63,10 @@ do
         if [ ! -e $MRIGHT ];
         then
            touch $MROT
-        else
-           rm $MROT
+           while [ ! -e $MROT ]
+           do
+             pause 0.1
+           done
         fi
 
         #Activate Right rotation
@@ -83,8 +86,10 @@ do
         if [ ! -e $MDOWN ];
         then
            touch $MROT
-        else
-           rm $MROT
+           while [ ! -e $MROT ]
+           do
+             pause 0.1
+           done
         fi
 
         #Activate Up rotation
@@ -104,8 +109,10 @@ do
         if [ ! -e $MUP ];
         then
            touch $MROT
-        else
-           rm $MROT
+           while [ ! -e $MROT ]
+           do
+             pause 0.1
+           done
         fi
 
         #Activate Up rotation
@@ -117,7 +124,9 @@ do
         echo NORMAL
    fi
 
-   sleep 0.5
-
-
+   sleep 0.1
+   if [ ! -e $TOGGLE ];
+        then
+        exit
+   fi
 done

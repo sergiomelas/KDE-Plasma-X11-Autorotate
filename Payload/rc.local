@@ -2,16 +2,14 @@
 
 ##################################################################
 #        rc.local Change permissions to some system objects      #
-#              Developed by sergio melas 2021                    #
+#              Developed by sergio melas 2021-23                 #
 ##################################################################
 
 
 #retrive variables for screen and keyboard
 KEYBKLIGHT=$( cat /usr/Autorotate/KEYBKLIGHT.conf )
-SCRBKLIGHT=$( cat /usr/Autorotate/SCRBKLIGHT.conf )
 
 #change permissions
 chmod 777 $KEYBKLIGHT
-chmod 777 $SCRBKLIGHT
 
 
