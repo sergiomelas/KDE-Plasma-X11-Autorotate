@@ -9,8 +9,7 @@ Installation Instructions:
   -Unzip the file
   -Edit "Autorotate_conf.sh" configuration file in the Payload sub directory, to match the config of your system
   -Open terminal
-  -cd in the subdirectory where you unzipped likr in ./KDE_Autorotate
-  -Run the install.sh script
+  -Run the install.sh script (Just drag and drop file rest is automatic)
   -Reboot
   -Install tablet support for KDE
     sudo apt-get install kde-config-tablet
