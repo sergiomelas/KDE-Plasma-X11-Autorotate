@@ -51,5 +51,5 @@ V2.0  -Added support for plank and pulseaudio
 V2.1  -Addesd support for Pipewire and Easy effects,
       -improved sincronization of rotation with hand shake,
       -Removed backlight managenet because nice to have and creating to many bugs
-      -Corrected Bug on processes
+      -Corrected Bug on processes and sleep
       -Cleaned unused old commented code
