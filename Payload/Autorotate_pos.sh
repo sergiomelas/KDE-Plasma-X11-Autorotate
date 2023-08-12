@@ -43,7 +43,7 @@ do
            touch $MROT
            while [ ! -e $MROT ]
            do
-             pause 0.1
+             sleep 0.1
            done
         fi
 
@@ -65,7 +65,7 @@ do
            touch $MROT
            while [ ! -e $MROT ]
            do
-             pause 0.1
+             sleep 0.1
            done
         fi
 
@@ -88,7 +88,7 @@ do
            touch $MROT
            while [ ! -e $MROT ]
            do
-             pause 0.1
+             sleep 0.1
            done
         fi
 
@@ -111,7 +111,7 @@ do
            touch $MROT
            while [ ! -e $MROT ]
            do
-             pause 0.1
+             sleep 0.1
            done
         fi
 
