@@ -61,6 +61,7 @@ echo  ""
 sudo apt-get install libnotify-bin
 sudo apt-get install onboard
 sudo apt-get install xdotool
+sudo apt-get install iio-sensor-proxy
 
 while true
 do
