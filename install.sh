@@ -14,6 +14,20 @@ echo  " "
 
 echo  ""
 
+if [ $XDG_SESSION_TYPE  != 'x11' ] || [ $DESKTOP_SESSION != 'plasma' ]
+then
+  echo  " "
+  echo  " ##################################################################"
+  echo  " #  KDE Autorotate support only systems with KDE Plasma on Xorg   #"
+  echo  " #                     Installation Aborted                       #"
+  echo  " ##################################################################"
+  echo  " "
+  exit 0
+fi
+
+
+
+
 VAR=$0
 DIR="$(dirname "${VAR}")"
 cd  "${DIR}"
