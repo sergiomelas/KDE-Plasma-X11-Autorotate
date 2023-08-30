@@ -9,13 +9,14 @@ Installation Instructions:
   -Unzip the file
   -Edit "Autorotate_conf.sh" configuration file in the Payload sub directory, to match the config of your system
   -Open terminal
-  -Run the install.sh script (Just drag and drop file rest is automatic)
+  -Run the install.sh script (Just drag and drop file the rest is automatic)
   -Reboot
   -Install tablet support for KDE
     sudo apt-get install kde-config-tablet
     Configure:/Settings/Input Devices/Graphic Tablet: Check "Auto-Rotate With Screen" and "Invert Auto-Rotation"
   -Add /usr/bin/Autorotate_clean.sh in the shutdown execution files
     Configure:/Settings/Startup and Shudwn/add logout Scrip and set that file
+
 Update configuration Instructions:
 
   -Update "Autorotate_conf.sh" configuration file in the Payload sub directory
@@ -52,4 +53,5 @@ V2.1  -Addesd support for Pipewire and Easy effects,
       -improved sincronization of rotation with hand shake,
       -Removed backlight managenet because nice to have and creating to many bugs
       -Corrected Bug on processes and sleep
+      -Added Check for X11 and Kde Plasma at installation
       -Cleaned unused old commented code
