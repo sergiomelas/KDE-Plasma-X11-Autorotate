@@ -62,7 +62,7 @@ V2.0  2023-07-30
   -Added support for plank and pulseaudio
 V2.1  2023-08-30-Addesd support for Pipewire and Easy effects,
   -improved sincronization of rotation with hand shake,
-  -Removed backlight managenet because nice to have and creating to many bugs
+  -Removed backlight management because nice to have and creating to many bugs
   -Corrected Bug on processes and sleep
   -Added Check for X11 and Kde Plasma at installation
   -Cleaned unused old commented code
