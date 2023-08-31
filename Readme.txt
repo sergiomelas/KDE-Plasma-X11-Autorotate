@@ -31,27 +31,38 @@ Note: this software works only for Kde Plasma with X11 session
 ##################################################################################################################
 Change log:
 
-V1.0: -Initial version
-V1.1: -Added themed icons
-V1.2: -Theamed icons are chosen at install
-V1.3: -State memory added
-V1.4: -Improved State Memory,
-      -Added Global Config
-V1.5: -Fully centralized global Config,
-      -Improved backlight management,
-      -Added some themes
-V1.6: -Added timer for rotation confirmation to avoid spurius trasnsitions,
-      -Added stereo reverse in upsidedown mode,
-      -Better keyboard backlight management,
-      -Added interactive dialogue
-V1.7: -Added full support for stilus digitizer,
-      -Improved Sound Management
-V1.8: -Removed icon acess from rclocal
-V1.9: -Added forced stop in toggle, added autochange directory in install
-V2.0  -Added support for plank and pulseaudio
-V2.1  -Addesd support for Pipewire and Easy effects,
-      -improved sincronization of rotation with hand shake,
-      -Removed backlight managenet because nice to have and creating to many bugs
-      -Corrected Bug on processes and sleep
-      -Added Check for X11 and Kde Plasma at installation
-      -Cleaned unused old commented code
+V1.0: 2021-12-28
+  -Initial version
+V1.1: 2022-02-12
+  -Added themed icons
+V1.2: 2022-03-30
+  -Theamed icons are chosen at install
+V1.3: 2022-04-14-
+  -State memory added
+V1.4: 2022-05-30
+  -Improved State Memory,
+  -Added Global Config
+V1.5: 2022-06-20
+  -Fully centralized global Config,
+  -Improved backlight management,
+  -Added some themes
+V1.6: 2022-08-20
+  -Added timer for rotation confirmation to avoid spurius trasnsitions,
+  -Added stereo reverse in upsidedown mode,
+  -Better keyboard backlight management,
+  -Added interactive dialogue
+V1.7: 2022-10-30
+  -Added full support for stilus digitizer,
+  -Improved Sound Management
+V1.8: 2023-01-20
+  -Removed icon acess from rclocal
+V1.9: 2023-04-25
+  -Added forced stop in toggle, added autochange directory in install
+V2.0  2023-07-30
+  -Added support for plank and pulseaudio
+V2.1  2023-08-30-Addesd support for Pipewire and Easy effects,
+  -improved sincronization of rotation with hand shake,
+  -Removed backlight managenet because nice to have and creating to many bugs
+  -Corrected Bug on processes and sleep
+  -Added Check for X11 and Kde Plasma at installation
+  -Cleaned unused old commented code
