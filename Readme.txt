@@ -66,3 +66,4 @@ V2.1  2023-08-30-Addesd support for Pipewire and Easy effects,
   -Corrected Bug on processes and sleep
   -Added Check for X11 and Kde Plasma at installation
   -Cleaned unused old commented code
+  -Corrected bug in keyboard backlight
