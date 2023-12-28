@@ -28,7 +28,7 @@ ID4=2
 #########################################################################################
 #KEYBOARD BACKLIGHT:Update this according to output form command: ls /sys/class/leds/
 #add "/brightness" at the end,ie :/sys/class/leds/<KEYBOARD BACKLIGHT>/brightness
-KEYBKLIGHT=/sys/class/leds/input15::kana/brightness
+KEYBKLIGHT=/sys/class/leds/platform::kbd_backlight/brightness
 
 
 #########################################################################################
@@ -38,6 +38,7 @@ KEYBKLIGHT=/sys/class/leds/input15::kana/brightness
 #Note if using pulseeffect or easyeffects use it instead of phisical output
 SINK=alsa_output.pci-0000_03_00.6.HiFi__hw_Generic_1__sink
 #SINK=easyeffects_sink
+#SINK=PulseEffects_apps
 #####################################OPTIONAL############################################
 #SOUNDS: activation, desactivation, each rotation
 SNDon=/usr/share/sounds/freedesktop/stereo/service-login.oga

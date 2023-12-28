@@ -6,7 +6,7 @@
 ##################################################################
 
 
-#retrive variables for screen and keyboard
+#retrive variables for keyboard
 KEYBKLIGHT=$( cat /usr/Autorotate/KEYBKLIGHT.conf )
 
 #change permissions

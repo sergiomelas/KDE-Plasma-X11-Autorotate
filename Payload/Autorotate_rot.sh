@@ -60,16 +60,17 @@ do
          if [ -e $MROT ] #If rotation confirmed
          then
             echo NEED ROTATE
-            #Memorise Keybord britgtness and switch off
-            kbbrit=$(cat  $KEYBKLIGHT)
-
 
             if [ -e $CLEFT ] #If rotation left
             then
                echo ROTATE LEFT
-               #play sound
-               paplay $SNDrotate &
 
+
+               #Memorise Keybord britgtness if we came from up and switch off
+               if [ -e $MUP ]
+               then
+                   kbbrit=$(cat  $KEYBKLIGHT)
+               fi
 
                if [[ $kbbrit -gt 0 ]]
                then
@@ -100,6 +101,13 @@ do
                pactl set-default-sink $SINK
                pactl unload-module module-remap-sink
 
+               #play sound
+               sleep 0.5
+               paplay $SNDrotate &
+
+
+
+
                #Memorise Left state
                rm $MUP
                touch $MLEFT
@@ -113,8 +121,12 @@ do
             if [ -e $CRIGHT ] #If rotation right
             then
                echo ROTATE RIGHT
-               #play sound
-               paplay $SNDrotate &
+
+               #Memorise Keybord britgtness if we came from up and switch off
+               if [ -e $MUP ]
+               then
+                   kbbrit=$(cat  $KEYBKLIGHT)
+               fi
 
                if [[ $kbbrit -gt 0 ]]
                then
@@ -140,9 +152,15 @@ do
                #Start On screen Keyboard
                onboard &
 
+
                #Remove reverse stereo from sound profiles
                pactl set-default-sink $SINK
                pactl unload-module module-remap-sink
+
+               #play sound
+               sleep 0.5
+               paplay $SNDrotate &
+
 
                #Memorise Right state
                rm $MUP
@@ -154,9 +172,12 @@ do
             if [ -e $CDOWN ] #If rotation Botto up
             then
                echo ROTATE DOWN
-               #play sound
-               paplay $SNDrotate &
 
+               #Memorise Keybord britgtness if we came from up and switch off
+               if [ -e $MUP ]
+               then
+                   kbbrit=$(cat  $KEYBKLIGHT)
+               fi
 
                if [[ $kbbrit -gt 0 ]]
                then
@@ -190,6 +211,10 @@ do
                pactl set-default-sink Reverse
                pactl set-sink-volume Reverse 100%
 
+               #play sound
+               sleep 0.5
+               paplay $SNDrotate &
+
                #Memorise Down state
                rm $MUP
                rm $MLEFT
@@ -201,8 +226,6 @@ do
             if [ -e $CUP ] #If rotation Normal
             then
                echo ROTATE UP
-               #play sound
-               paplay $SNDrotate &
 
 
                #Kill Dock
@@ -235,9 +258,14 @@ do
                fi
 
 
+
                #Remove reverse stereo from sound profiles
                pactl set-default-sink $SINK
                pactl unload-module module-remap-sink
+
+               #play sound
+               sleep 0.5
+               paplay $SNDrotate &
 
                #Memorise Normal state
                touch $MUP
@@ -245,13 +273,15 @@ do
                rm $MRIGHT
                rm $MDOWN
 
+               #Restore keyboard  backlight
+               echo $kbbrit > $KEYBKLIGHT
+
             fi
 
             echo RORATION COMPLETE
             rm $MROT
             sleep 2
-            #Restore keyboard  backlight
-            echo $kbbrit > $KEYBKLIGHT
+
 
 
         fi
