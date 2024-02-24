@@ -21,17 +21,11 @@ MDOWN=$HOME/.autorotate/.mdown            #Toggle last rotation down
 
 TOGGLE=$HOME/.autorotate/.toggle         #Toggle rotation on off
 
-
-
-
 echo run
-
-
 
 #Scan for orientation changes
 monitor-sensor | while read line
 do
-
 
    #Memorize position
    if [[ $line =~ .*left-up.* ]] #If left up
@@ -53,13 +47,11 @@ do
            done
         fi
 
-
         echo LEFT
    fi
 
    if [[ $line =~ .*right-up.* ]] #If right up
    then
-
 
         #Activate Right rotation
         rm $CUP
@@ -77,13 +69,11 @@ do
            done
         fi
 
-
         echo RIGHT
    fi
 
    if [[ $line =~ .*bottom-up.* ]] #If Bottom up
    then
-
 
         #Activate Up rotation
         rm $CUP
@@ -101,13 +91,11 @@ do
            done
         fi
 
-
         echo INVERTED
    fi
 
    if [[ $line =~ .*normal.* ]] #In normal
    then
-
 
         #Activate Up rotation
         touch $CUP

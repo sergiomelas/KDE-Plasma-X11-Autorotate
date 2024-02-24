@@ -5,6 +5,8 @@
 #              Developed by sergio melas 2021-23                 #
 ##################################################################
 
+#Work in progress to move all sounds sources to a sink
+
 
 echo "Setting default sink to: $1";
 pactl set-default-sink "$1"

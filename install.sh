@@ -62,55 +62,56 @@ sudo apt-get install libnotify-bin
 sudo apt-get install onboard
 sudo apt-get install xdotool
 sudo apt-get install iio-sensor-proxy
+sudo apt-get install  zenity
 
 while true
 do
 
    echo  ""
-   echo -n "Enter the theme number (1,2,3,4,5,6,7): "
-   read Theme
-
+   echo -n "Choose the theme : "
+   array=('Blue round arrow rotation' 'Green Red ipad rotation'  'Black Phone rotation' 'White Phone rotation' 'Brown Arrows rotation' 'Rainbow Arrows rotation Dark' 'Rainbow Arrows rotation Light')
+   Theme=$(zenity --entry --title "Window title" --text "${array[@]}" --text "Plese choose the theme set.")
    echo  -n "The iconset of $Theme is : "
 
    case $Theme in
 
-     1)
+     'Blue round arrow rotation')
        echo  "Blue round arrow rotation"
        sudo cp ./Payload/Theme_1/rstart.png /usr/share/icons/
        sudo cp ./Payload/Theme_1/rstop.png  /usr/share/icons/
        sudo cp ./Payload/Theme_1/rstate.png /usr/share/icons/
        ;;
-     2)
+     'Green Red ipad rotation')
        echo  "Green Red ipad rotation"
        sudo cp ./Payload/Theme_2/rstart.png /usr/share/icons/
        sudo cp ./Payload/Theme_2/rstop.png  /usr/share/icons/
        sudo cp ./Payload/Theme_2/rstate.png /usr/share/icons/
        ;;
-     3)
+     'Black Phone rotation')
        echo  "Black Phone rotation"
        sudo cp ./Payload/Theme_3/rstart.png /usr/share/icons/
        sudo cp ./Payload/Theme_3/rstop.png  /usr/share/icons/
        sudo cp ./Payload/Theme_3/rstate.png /usr/share/icons/
        ;;
-     4)
+     'White Phone rotation')
        echo  "White Phone rotation"
        sudo cp ./Payload/Theme_4/rstart.png /usr/share/icons/
        sudo cp ./Payload/Theme_4/rstop.png  /usr/share/icons/
        sudo cp ./Payload/Theme_4/rstate.png /usr/share/icons/
        ;;
-     5)
+     'Brown Arrows rotation')
        echo  "Brown Arrows rotation"
        sudo cp ./Payload/Theme_5/rstart.png /usr/share/icons/
        sudo cp ./Payload/Theme_5/rstop.png  /usr/share/icons/
        sudo cp ./Payload/Theme_5/rstate.png /usr/share/icons/
        ;;
-     6)
+     'Rainbow Arrows rotation Dark')
        echo   "Rainbow Arrows rotation Dark"
        sudo cp ./Payload/Theme_6/rstart.png /usr/share/icons/
        sudo cp ./Payload/Theme_6/rstop.png  /usr/share/icons/
        sudo cp ./Payload/Theme_6/rstate.png /usr/share/icons/
        ;;
-     7)
+     'Rainbow Arrows rotation Light')
        echo   "Rainbow Arrows rotation Light"
        sudo cp ./Payload/Theme_7/rstart.png /usr/share/icons/
        sudo cp ./Payload/Theme_7/rstop.png  /usr/share/icons/

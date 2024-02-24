@@ -16,14 +16,6 @@ TOUCHSCREEN="Wacom HID 524D Finger touch"
 PEN="Wacom HID 524D Pen stylus"
 ERASER="Wacom HID 524D Pen eraser"
 
-#########################################################################################
-#KEYBOARD & TOUCHPAD: Update this according to output from command: xinput list
-#keyboard   (ID1=id=# ,ID2=[slave  keyboard (#)] at the line "keyboard" for ID1 ID2
-#Touch Pad  (ID3=id=# ,ID4=[slave  pointer  (#)] at the line "pointer"  for ID3 ID4
-ID1=13
-ID2=3
-ID3=12
-ID4=2
 
 #########################################################################################
 #KEYBOARD BACKLIGHT:Update this according to output form command: ls /sys/class/leds/
@@ -75,8 +67,5 @@ echo $PEN         | sudo tee -a /usr/Autorotate/PEN.conf         > /dev/null
 echo $ERASER      | sudo tee -a /usr/Autorotate/ERASER.conf      > /dev/null
 echo $KEYBKLIGHT  | sudo tee -a /usr/Autorotate/KEYBKLIGHT.conf  > /dev/null
 echo $SINK        | sudo tee -a /usr/Autorotate/SINK.conf        > /dev/null
-echo $ID1         | sudo tee -a /usr/Autorotate/ID1.conf         > /dev/null
-echo $ID2         | sudo tee -a /usr/Autorotate/ID2.conf         > /dev/null
-echo $ID3         | sudo tee -a /usr/Autorotate/ID3.conf         > /dev/null
-echo $ID4         | sudo tee -a /usr/Autorotate/ID4.conf         > /dev/null
+
 

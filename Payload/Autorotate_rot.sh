@@ -8,9 +8,9 @@
 
 #Initialize Global Variables
 TRANSFORM='Coordinate Transformation Matrix'
-TOGGLE=$HOME/.autorotate/.toggle         #Toggle rotation on off
+TOGGLE=$HOME/.autorotate/.toggle          #Toggle rotation on off
 
-MROT=$HOME/.autorotate/.mrot             #Toggle rotation not done
+MROT=$HOME/.autorotate/.mrot              #Toggle rotation not done
 
 CUP=$HOME/.autorotate/.cup                #Toggle rotation up
 CLEFT=$HOME/.autorotate/.cleft            #Toggle rotation left
@@ -32,18 +32,10 @@ PEN=$( cat /usr/Autorotate/PEN.conf )
 ERASER=$( cat /usr/Autorotate/ERASER.conf )
 KEYBKLIGHT=$( cat /usr/Autorotate/KEYBKLIGHT.conf )
 SINK=$( cat /usr/Autorotate/SINK.conf )
-ID1=$( cat /usr/Autorotate/ID1.conf )
-ID2=$( cat /usr/Autorotate/ID2.conf )
-ID3=$( cat /usr/Autorotate/ID3.conf )
-ID4=$( cat /usr/Autorotate/ID4.conf )
 
 
 #Memorise Keybord britgtness
 kbbrit=$(cat  $KEYBKLIGHT)
-
-
-
-
 
 echo run
 
@@ -65,7 +57,6 @@ do
             then
                echo ROTATE LEFT
 
-
                #Memorise Keybord britgtness if we came from up and switch off
                if [ -e $MUP ]
                then
@@ -83,11 +74,7 @@ do
                #Kill on screen keyboard
                killall onboard
 
-               #Kill keyboard and Touchpad
-               xinput float $ID1 &
-               xinput float $ID3 &
-
-               #rotate screen pen and touchscreen
+               #rotate display, touchscreen, pen and eraser
                xrandr --output $SCREEN  --rotate left &
                xinput set-prop "$TOUCHSCREEN"    "$TRANSFORM" 0 -1 1 1 0 0 0 0 1
                xinput set-prop "$PEN"            "$TRANSFORM" 0 -1 1 1 0 0 0 0 1
@@ -105,16 +92,11 @@ do
                sleep 0.5
                paplay $SNDrotate &
 
-
-
-
                #Memorise Left state
                rm $MUP
                touch $MLEFT
                rm $MRIGHT
                rm $MDOWN
-
-
 
             fi
 
@@ -139,11 +121,7 @@ do
                #Kill on screen keyboard
                killall onboard
 
-               #Kill Keyboard and Touchpad
-               xinput float $ID1 &
-               xinput float $ID3 &
-
-               #rotate screen pen and touchscreen
+               #rotate display, touchscreen, pen and eraser
                xrandr --output $SCREEN --rotate right &
                xinput set-prop "$TOUCHSCREEN"    "$TRANSFORM" 0 1 0 -1 0 1 0 0 1
                xinput set-prop "$PEN"            "$TRANSFORM" 0 1 0 -1 0 1 0 0 1
@@ -151,7 +129,6 @@ do
 
                #Start On screen Keyboard
                onboard &
-
 
                #Remove reverse stereo from sound profiles
                pactl set-default-sink $SINK
@@ -167,6 +144,7 @@ do
                rm $MLEFT
                touch $MRIGHT
                rm $MDOWN
+
             fi
 
             if [ -e $CDOWN ] #If rotation Botto up
@@ -190,11 +168,7 @@ do
                #Kill on screen keyboard
                killall onboard
 
-               #Kill Keyboard and Touchpad
-               xinput float $ID1 &
-               xinput float $ID3 &
-
-               #rotate screen pen and touchscreen
+               #rotate display, touchscreen, pen and eraser
                xrandr --output $SCREEN --rotate inverted &
                xinput set-prop "$TOUCHSCREEN"    "$TRANSFORM" -1 0 1 0 -1 1 0 0 1
                xinput set-prop "$PEN"            "$TRANSFORM" -1 0 1 0 -1 1 0 0 1
@@ -240,24 +214,15 @@ do
                xinput set-prop "$PEN"            "$TRANSFORM" 1 0 0 0 1 0 0 0 1
                xinput set-prop "$ERASER"         "$TRANSFORM" 1 0 0 0 1 0 0 0 1
 
-
-
-
                #Start dock
                latte-dock --replace &
                plank &
-
-               #Start Keyboard and Touchpad
-               xinput reattach $ID1 $ID2 &
-               xinput reattach $ID3 $ID4 &
 
                #Restore keyboard backlight
                if [[ $kbbrit -gt 0 ]]
                then
                   echo $kbbrit > $KEYBKLIGHT
                fi
-
-
 
                #Remove reverse stereo from sound profiles
                pactl set-default-sink $SINK
@@ -281,8 +246,6 @@ do
             echo RORATION COMPLETE
             rm $MROT
             sleep 2
-
-
 
         fi
      fi

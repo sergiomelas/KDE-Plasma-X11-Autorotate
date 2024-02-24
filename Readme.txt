@@ -6,6 +6,7 @@
                      ##################################################################
 
 Installation Instructions:
+  -Install a kernel with the tablet mode (ex: for Lenovos activate activate CONFIG_LENOVO_YMC)
   -Unzip the file
   -Edit "Autorotate_conf.sh" configuration file in the Payload sub directory, to match the config of your system
   -Open terminal
@@ -67,3 +68,4 @@ V2.1  2023-08-30-Addesd support for Pipewire and Easy effects,
   -Added Check for X11 and Kde Plasma at installation
   -Cleaned unused old commented code
   -Corrected bug in keyboard backlight
+V2.2  2024-02-24-Substitued keyboard and pad desativation by kernel tablet module module
