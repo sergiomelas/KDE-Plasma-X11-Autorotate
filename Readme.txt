@@ -6,7 +6,7 @@
                      ##################################################################
 
 Installation Instructions:
-  -Install a kernel with the tablet mode (ex: for Lenovos activate activate CONFIG_LENOVO_YMC)
+  -Install a kernel with the tablet mode (ex: for Lenovos activate CONFIG_LENOVO_YMC)
   -Unzip the file
   -Edit "Autorotate_conf.sh" configuration file in the Payload sub directory, to match the config of your system
   -Open terminal
