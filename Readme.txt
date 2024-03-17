@@ -1,9 +1,15 @@
                      ##################################################################
                      ##################################################################
-                     ###                   Autorotate for X/KDE                     ###
+                     ###                   Autorotate for X11/KDE                   ###
                      ### Developed by sergio melas (sergiomelas@gmail.com) 2021-23  ###
                      ##################################################################
                      ##################################################################
+
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+Inportant: This is intended for the stubborn people that want to stay in KDE
+Plasam on X11, This functionality exists in KDE Plasma on Wayland.
+DO NOT USE IF YOU USE KDE ON WAYLAND
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
 Installation Instructions:
   -Install a kernel with the tablet mode (ex: for Lenovos activate CONFIG_LENOVO_YMC)
@@ -15,8 +21,8 @@ Installation Instructions:
   -Install tablet support for KDE
     sudo apt-get install kde-config-tablet
     Configure:/Settings/Input Devices/Graphic Tablet: Check "Auto-Rotate With Screen" and "Invert Auto-Rotation"
-  -Add /usr/bin/Autorotate_clean.sh in the shutdown execution files
-    Configure:/Settings/Startup and Shudwn/add logout Scrip and set that file
+  -Add /usr/bin/Autorotate_clean.sh in the startup execution files
+    Configure:/Settings/Startup and Shudwn/Autostart: add Login Scripts and set that file
 
 Update configuration Instructions:
 
@@ -61,11 +67,14 @@ V1.9: 2023-04-25
   -Added forced stop in toggle, added autochange directory in install
 V2.0  2023-07-30
   -Added support for plank and pulseaudio
-V2.1  2023-08-30-Addesd support for Pipewire and Easy effects,
+V2.1  2023-08-30
+  -Addesd support for Pipewire and Easy effects,
   -improved sincronization of rotation with hand shake,
   -Removed backlight management because nice to have and creating to many bugs
   -Corrected Bug on processes and sleep
   -Added Check for X11 and Kde Plasma at installation
   -Cleaned unused old commented code
   -Corrected bug in keyboard backlight
-V2.2  2024-02-24-Substitued keyboard and pad desativation by kernel tablet module module
+V2.2  2024-03-05
+  -Substitued keyboard and pad desativation by kernel tablet module
+  -added option to deactivate reverse stereo
