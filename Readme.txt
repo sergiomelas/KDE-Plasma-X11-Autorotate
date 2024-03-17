@@ -8,7 +8,7 @@
 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 Inportant: This is intended for the stubborn people that want to stay in KDE
 Plasam on X11, This functionality exists in KDE Plasma on Wayland.
-DO NOT USE IF YOU USE KDE ON WAYLAND
+DO NOT USE IF YOU USE KDE ON WAYLAND (anyway i check it in the istallation Script
 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
 Installation Instructions:
