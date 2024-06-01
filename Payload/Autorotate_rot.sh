@@ -32,6 +32,7 @@ PEN=$( cat /usr/Autorotate/PEN.conf )
 ERASER=$( cat /usr/Autorotate/ERASER.conf )
 KEYBKLIGHT=$( cat /usr/Autorotate/KEYBKLIGHT.conf )
 SINK=$( cat /usr/Autorotate/SINK.conf )
+SETREVERSE=$( cat /usr/Autorotate/SETREVERSE.conf )
 
 
 #Memorise Keybord britgtness
@@ -45,10 +46,10 @@ do
 
    if [ -e $TOGGLE ] #If autorotate is active
    then
-
+      sleep 0.1  #Timer to free cpu
       if [ -e $MROT ] #If rotation not done
       then
-         sleep 0.5  #Timer to be shure rotation is not a wiggle
+         sleep 1  #Timer to be shure rotation is not a wiggle
          if [ -e $MROT ] #If rotation confirmed
          then
             echo NEED ROTATE
@@ -82,7 +83,7 @@ do
 
 
                #Start On screen Keyboard
-               onboard &
+               kstart5 onboard &
 
                #Remove reverse stereo from sound profiles
                pactl set-default-sink $SINK
@@ -128,7 +129,7 @@ do
                xinput set-prop "$ERASER"         "$TRANSFORM" 0 1 0 -1 0 1 0 0 1
 
                #Start On screen Keyboard
-               onboard &
+               kstart5 onboard &
 
                #Remove reverse stereo from sound profiles
                pactl set-default-sink $SINK
@@ -175,16 +176,18 @@ do
                xinput set-prop "$ERASER"         "$TRANSFORM" -1 0 1 0 -1 1 0 0 1
 
                #Start On screen Keyboard
-               onboard &
+               kstart5 onboard &
 
-               #Add reverse stereo to sound profiles
-               pactl load-module module-remap-sink sink_name=Reverse master=$SINK \
-               channels=2 master_channel_map=front-left,front-right channel_map=front-right,front-left \
-               sink_properties="device.description='Reverse-Stereo'"
+               if [[ "$SETREVERSE" -gt 0.5 ]] #If reverse active
+               then
+                 #Add reverse stereo to sound profiles
+                 pactl load-module module-remap-sink sink_name=Reverse master=$SINK \
+                 channels=2 master_channel_map=front-left,front-right channel_map=front-right,front-left \
+                 sink_properties="device.description='Reverse-Stereo'"
 
-               pactl set-default-sink Reverse
-               pactl set-sink-volume Reverse 100%
-
+                 pactl set-default-sink Reverse
+                 pactl set-sink-volume Reverse 100%
+               fi
                #play sound
                sleep 0.5
                paplay $SNDrotate &
@@ -215,8 +218,8 @@ do
                xinput set-prop "$ERASER"         "$TRANSFORM" 1 0 0 0 1 0 0 0 1
 
                #Start dock
-               latte-dock --replace &
-               plank &
+               kstart5 latte-dock --replace &
+               kstart5 plank &
 
                #Restore keyboard backlight
                if [[ $kbbrit -gt 0 ]]
@@ -251,15 +254,19 @@ do
      fi
 
      #if rotating down force sound output
-     if [ -e $MDOWN ];
+     if [[ "$SETREVERSE" -gt 0.5 ]] #If reverse active
      then
-           #Put sound to Resverse
-           pactl set-default-sink Reverse
-           #Alwais force reverse volume
-           pactl set-sink-volume Reverse 100%
-           sleep 0.05
-     else
-        sleep 0.1
+
+       if [ -e $MDOWN ];
+       then
+             #Put sound to Resverse
+             pactl set-default-sink Reverse
+             #Alwais force reverse volume
+             pactl set-sink-volume Reverse 100%
+             sleep 0.05
+       else
+         sleep 0.1
+       fi
      fi
    else
      sleep 0.1

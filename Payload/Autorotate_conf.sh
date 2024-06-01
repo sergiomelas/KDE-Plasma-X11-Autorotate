@@ -30,7 +30,15 @@ KEYBKLIGHT=/sys/class/leds/platform::kbd_backlight/brightness
 #Note if using pulseeffect or easyeffects use it instead of phisical output
 SINK=alsa_output.pci-0000_03_00.6.HiFi__hw_Generic_1__sink
 #SINK=easyeffects_sink
-#SINK=PulseEffects_apps
+#SINK=PulseEffects_mic
+
+#########################################################################################
+#SOUND:Activate reverse stero in down position
+
+SETREVERSE=0
+#SETREVERSE=1
+
+
 #####################################OPTIONAL############################################
 #SOUNDS: activation, desactivation, each rotation
 SNDon=/usr/share/sounds/freedesktop/stereo/service-login.oga
@@ -67,5 +75,6 @@ echo $PEN         | sudo tee -a /usr/Autorotate/PEN.conf         > /dev/null
 echo $ERASER      | sudo tee -a /usr/Autorotate/ERASER.conf      > /dev/null
 echo $KEYBKLIGHT  | sudo tee -a /usr/Autorotate/KEYBKLIGHT.conf  > /dev/null
 echo $SINK        | sudo tee -a /usr/Autorotate/SINK.conf        > /dev/null
+echo $SETREVERSE  | sudo tee -a /usr/Autorotate/SETREVERSE.conf  > /dev/null
 
 
