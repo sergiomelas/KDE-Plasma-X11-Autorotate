@@ -8,7 +8,7 @@
 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 Inportant: This is intended for the stubborn people that want to stay in KDE
 Plasam on X11, This functionality exists in KDE Plasma on Wayland.
-DO NOT USE IF YOU USE KDE ON WAYLAND (anyway i check it in the istallation Script)
+DO NOT USE IF YOU USE KDE ON WAYLAND
 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
 Installation Instructions:
@@ -78,3 +78,5 @@ V2.1  2023-08-30
 V2.2  2024-03-05
   -Substitued keyboard and pad desativation by kernel tablet module
   -added option to deactivate reverse stereo
+V2.3  2024-06-01
+  -COrrected bug cousing cpu waste
