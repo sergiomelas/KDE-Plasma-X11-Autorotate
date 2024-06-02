@@ -118,6 +118,6 @@ do
    sleep 0.1
    if [ ! -e $TOGGLE ];
         then
-        exit
+        exit 0
    fi
 done
