@@ -30,7 +30,7 @@ if [ ! -e $TOGGLE ]; then
     xdotool mousemove $X $Y
     xrefresh
 
-    notify-send -t 2000 -e 'Autorotate Enabled ' -i /usr/share/icons/rstart.png -a 'KDE Autorotate' -u low
+    notify-send -t 2000 -e 'Autorotate Enabled ' -i /usr/share/icons/rstate.png -a 'KDE Autorotate' -u low
     #Start up rotation sensor and rotator
     kstart5 bash '/usr/bin/Autorotate_rot.sh'  &
     kstart5 bash '/usr/bin/Autorotate_pos.sh'  &
@@ -89,7 +89,7 @@ if [ -e $TOGGLE ]; then
 
 
 
-    notify-send -t 2000 -e 'Autorotate Disabled' -i /usr/share/icons/rstop.png -a 'KDE Autorotate' -u low
+    notify-send -t 2000 -e 'Autorotate Disabled' -i /usr/share/icons/rstate.png -a 'KDE Autorotate' -u low
     paplay $SNDoff &
     rm $TOGGLE
     kstart5 bash '/usr/bin/Autorotate_clean.sh'  &
