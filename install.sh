@@ -77,58 +77,85 @@ do
 
      'Blue round arrow rotation')
        echo  "Blue round arrow rotation"
-       sudo cp ./Payload/Theme_1/rstart.png /usr/share/icons/
-       sudo cp ./Payload/Theme_1/rstop.png  /usr/share/icons/
+       sudo cp ./Payload/Theme_1/'rstart'.png /usr/share/icons/
+       sudo cp ./Payload/Theme_1/'rstart hor'.png /usr/share/icons/
+       sudo cp ./Payload/Theme_1/'rstart ver'.png /usr/share/icons/
+       sudo cp ./Payload/Theme_1/'rstop hor'.png  /usr/share/icons/
+       sudo cp ./Payload/Theme_1/'rstop ver'.png  /usr/share/icons/
        sudo cp ./Payload/Theme_1/rstate.png /usr/share/icons/
        ;;
      'Green Red ipad rotation')
        echo  "Green Red ipad rotation"
-       sudo cp ./Payload/Theme_2/rstart.png /usr/share/icons/
-       sudo cp ./Payload/Theme_2/rstop.png  /usr/share/icons/
+       sudo cp ./Payload/Theme_2/'rstart'.png /usr/share/icons/
+       sudo cp ./Payload/Theme_2/'rstart hor'.png /usr/share/icons/
+       sudo cp ./Payload/Theme_2/'rstart ver'.png /usr/share/icons/
+       sudo cp ./Payload/Theme_2/'rstop hor'.png  /usr/share/icons/
+       sudo cp ./Payload/Theme_2/'rstop ver'.png  /usr/share/icons/
        sudo cp ./Payload/Theme_2/rstate.png /usr/share/icons/
        ;;
      'Black Phone rotation')
        echo  "Black Phone rotation"
-       sudo cp ./Payload/Theme_3/rstart.png /usr/share/icons/
-       sudo cp ./Payload/Theme_3/rstop.png  /usr/share/icons/
+       sudo cp ./Payload/Theme_3/'rstart'.png /usr/share/icons/
+       sudo cp ./Payload/Theme_3/'rstart hor'.png /usr/share/icons/
+       sudo cp ./Payload/Theme_3/'rstart ver'.png /usr/share/icons/
+       sudo cp ./Payload/Theme_3/'rstop hor'.png  /usr/share/icons/
+       sudo cp ./Payload/Theme_3/'rstop ver'.png  /usr/share/icons/
        sudo cp ./Payload/Theme_3/rstate.png /usr/share/icons/
        ;;
      'White Phone rotation')
        echo  "White Phone rotation"
-       sudo cp ./Payload/Theme_4/rstart.png /usr/share/icons/
-       sudo cp ./Payload/Theme_4/rstop.png  /usr/share/icons/
+       sudo cp ./Payload/Theme_4/'rstart'.png /usr/share/icons/
+       sudo cp ./Payload/Theme_4/'rstart hor'.png /usr/share/icons/
+       sudo cp ./Payload/Theme_4/'rstart ver'.png /usr/share/icons/
+       sudo cp ./Payload/Theme_4/'rstop hor'.png  /usr/share/icons/
+       sudo cp ./Payload/Theme_4/'rstop ver'.png  /usr/share/icons/
        sudo cp ./Payload/Theme_4/rstate.png /usr/share/icons/
        ;;
      'Brown Arrows rotation')
        echo  "Brown Arrows rotation"
-       sudo cp ./Payload/Theme_5/rstart.png /usr/share/icons/
-       sudo cp ./Payload/Theme_5/rstop.png  /usr/share/icons/
+       sudo cp ./Payload/Theme_5/'rstart'.png /usr/share/icons/
+       sudo cp ./Payload/Theme_5/'rstart hor'.png /usr/share/icons/
+       sudo cp ./Payload/Theme_5/'rstart ver'.png /usr/share/icons/
+       sudo cp ./Payload/Theme_5/'rstop hor'.png  /usr/share/icons/
+       sudo cp ./Payload/Theme_5/'rstop ver'.png  /usr/share/icons/
        sudo cp ./Payload/Theme_5/rstate.png /usr/share/icons/
        ;;
      'Rainbow Arrows rotation Dark')
        echo   "Rainbow Arrows rotation Dark"
-       sudo cp ./Payload/Theme_6/rstart.png /usr/share/icons/
-       sudo cp ./Payload/Theme_6/rstop.png  /usr/share/icons/
+       sudo cp ./Payload/Theme_6/'rstart'.png /usr/share/icons/
+       sudo cp ./Payload/Theme_6/'rstart hor'.png /usr/share/icons/
+       sudo cp ./Payload/Theme_6/'rstart ver'.png /usr/share/icons/
+       sudo cp ./Payload/Theme_6/'rstop hor'.png  /usr/share/icons/
+       sudo cp ./Payload/Theme_6/'rstop ver'.png  /usr/share/icons/
        sudo cp ./Payload/Theme_6/rstate.png /usr/share/icons/
        ;;
      'Rainbow Arrows rotation Light')
        echo   "Rainbow Arrows rotation Light"
-       sudo cp ./Payload/Theme_7/rstart.png /usr/share/icons/
-       sudo cp ./Payload/Theme_7/rstop.png  /usr/share/icons/
+       sudo cp ./Payload/Theme_7/'rstart'.png /usr/share/icons/
+       sudo cp ./Payload/Theme_7/'rstart hor'.png /usr/share/icons/
+       sudo cp ./Payload/Theme_7/'rstart ver'.png /usr/share/icons/
+       sudo cp ./Payload/Theme_7/'rstop hor'.png  /usr/share/icons/
+       sudo cp ./Payload/Theme_7/'rstop ver'.png  /usr/share/icons/
        sudo cp ./Payload/Theme_7/rstate.png /usr/share/icons/
        ;;
      *)
        echo  "Unknown Theme using default"
-       sudo cp ./Payload/Theme_1/rstart.png /usr/share/icons/
-       sudo cp ./Payload/Theme_1/rstop.png  /usr/share/icons/
+       sudo cp ./Payload/Theme_1/'rstart'.png /usr/share/icons/
+       sudo cp ./Payload/Theme_1/'rstart hor'.png /usr/share/icons/
+       sudo cp ./Payload/Theme_1/'rstart ver'.png /usr/share/icons/
+       sudo cp ./Payload/Theme_1/'rstop hor'.png  /usr/share/icons/
+       sudo cp ./Payload/Theme_1/'rstop ver'.png  /usr/share/icons/
        sudo cp ./Payload/Theme_1/rstate.png /usr/share/icons/
        ;;
    esac
    sudo chmod 777 /usr/share/icons/rstate.png
-   sudo chmod 777 /usr/share/icons/rstart.png
-   sudo chmod 777 /usr/share/icons/rstop.png
+   sudo chmod 777 /usr/share/icons/'rstart'.png
+   sudo chmod 777 /usr/share/icons/'rstart hor'.png
+   sudo chmod 777 /usr/share/icons/'rstart ver'.png
+   sudo chmod 777 /usr/share/icons/'rstop hor'.png
+   sudo chmod 777 /usr/share/icons/'rstop ver'.png
 
-   notify-send -t 5000 '             Chosen Iconset' -i /usr/share/icons/rstop.png &
+   notify-send -t 5000 '             Chosen Iconset' -i /usr/share/icons/'rstop hor'.png &
    echo  ""
    echo -n "Whant to change theme (y/N)? "
    read resp

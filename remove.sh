@@ -18,7 +18,8 @@ sudo rm  /usr/bin/Autorotate_rot.sh
 sudo rm  /usr/bin/Autorotate_clean.sh
 sudo rm  /usr/share/applications/Autorotate.desktop
 sudo rm  /usr/share/icons/rstart.png
-sudo rm  /usr/share/icons/rstop.png
+sudo rm  /usr/share/icons/'rstop hor'.png
+sudo rm  /usr/share/icons/'rstop ver'.png
 sudo rm  /usr/share/icons/rstate.png
 rm  $HOME/Desktop/Autorotate.desktop
 

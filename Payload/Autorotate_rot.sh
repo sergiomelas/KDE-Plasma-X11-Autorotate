@@ -254,7 +254,7 @@ do
      fi
 
      #if rotating down force sound output
-     if [[ "$SETREVERSE" -gt 0.5 ]] #If reverse active
+     if [[ "$SETREVERSE" -gt 0 ]] #If reverse active
      then
 
        if [ -e $MDOWN ];

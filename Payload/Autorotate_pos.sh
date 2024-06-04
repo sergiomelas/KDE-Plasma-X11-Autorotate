@@ -6,6 +6,7 @@
 ##################################################################
 
 
+
 #Initialize Global Variables
 MROT=$HOME/.autorotate/.mrot             #Toggle rotation not done
 
@@ -37,6 +38,9 @@ do
         rm $CRIGHT
         rm $CDOWN
 
+        #Update Status Icon
+        cp /usr/share/icons/'rstart ver'.png /usr/share/icons/rstate.png
+
         #manage if rotation if necessary
         if [ ! -e $MLEFT ];
         then
@@ -58,6 +62,9 @@ do
         rm $CLEFT
         touch $CRIGHT
         rm $CDOWN
+
+        #Update Status Icon
+        cp /usr/share/icons/'rstart ver'.png /usr/share/icons/rstate.png
 
         #manage if rotation necessary
         if [ ! -e $MRIGHT ];
@@ -81,6 +88,9 @@ do
         rm $CRIGHT
         touch $CDOWN
 
+        #Update Status Icon
+        cp /usr/share/icons/'rstart hor'.png /usr/share/icons/rstate.png
+
         #manage if rotation necessary
         if [ ! -e $MDOWN ];
         then
@@ -102,6 +112,10 @@ do
         rm $CLEFT
         rm $CRIGHT
         rm $CDOWN
+
+        #Update Status Icon
+        cp /usr/share/icons/'rstart hor'.png /usr/share/icons/rstate.png
+
         #manage if rotation necessary
         if [ ! -e $MUP ];
         then

@@ -79,4 +79,5 @@ V2.2  2024-03-05
   -Substitued keyboard and pad desativation by kernel tablet module
   -added option to deactivate reverse stereo
 V2.3  2024-06-01
-  -COrrected bug cousing cpu waste
+  -Corrected bug cousing cpu waste
+  -Added Icons and state visualization
