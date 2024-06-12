@@ -16,10 +16,10 @@ MLEFT=$HOME/.autorotate/.mleft            #Toggle last rotation left
 MRIGHT=$HOME/.autorotate/.mright          #Toggle last rotation right
 MDOWN=$HOME/.autorotate/.mdown            #Toggle last rotation down
 
-TOGGLE=$HOME/.autorotate/.toggle         #Toggle rotation on off
+TOGGLE=$HOME/.autorotate/.toggle          #Toggle rotation on off
+MTOGGLE=$HOME/.autorotate/.mtoggle        #One shot toggle
 
-
-cp /usr/share/icons/rstop.png /usr/share/icons/rstate.png
+cp /usr/share/icons/'rstop hor.png' /usr/share/icons/rstate.png
 killall  monitor-sensor
 kill -9  $(pgrep -f '/usr/bin/Autorotate_rot.sh')
 
@@ -32,6 +32,7 @@ rm $MLEFT
 rm $MRIGHT
 rm $MDOWN
 rm $TOGGLE
+rm $MTOGGLE
 
 
 
