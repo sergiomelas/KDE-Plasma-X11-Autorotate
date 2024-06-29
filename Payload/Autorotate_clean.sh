@@ -19,6 +19,8 @@ MDOWN=$HOME/.autorotate/.mdown            #Toggle last rotation down
 TOGGLE=$HOME/.autorotate/.toggle          #Toggle rotation on off
 MTOGGLE=$HOME/.autorotate/.mtoggle        #One shot toggle
 
+
+
 cp /usr/share/icons/'rstop hor.png' /usr/share/icons/rstate.png
 killall  monitor-sensor
 kill -9  $(pgrep -f '/usr/bin/Autorotate_rot.sh')
