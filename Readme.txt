@@ -82,3 +82,5 @@ V2.3  2024-06-29
   -Corrected bug cousing cpu waste
   -Added Icons and state visualization
   -Corrected bug on touch screen while activated not horizontally
+V2.4  2024-07-28
+  -Added Virtual Keyboard for loging and lockscreen
