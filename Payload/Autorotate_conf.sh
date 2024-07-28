@@ -43,7 +43,7 @@ SETREVERSE=0
 #SOUNDS: activation, desactivation, each rotation
 SNDon=/usr/share/sounds/freedesktop/stereo/service-login.oga
 SNDoff=/usr/share/sounds/freedesktop/stereo/service-logout.oga
-SNDrotate=/usr/share/sounds/freedesktop/stereo/window-attention.oga
+SNDrotate=/usr/share/sounds/freedesktop/stereo/device-added.oga
 
 
 
@@ -76,5 +76,6 @@ echo $ERASER      | sudo tee -a /usr/Autorotate/ERASER.conf      > /dev/null
 echo $KEYBKLIGHT  | sudo tee -a /usr/Autorotate/KEYBKLIGHT.conf  > /dev/null
 echo $SINK        | sudo tee -a /usr/Autorotate/SINK.conf        > /dev/null
 echo $SETREVERSE  | sudo tee -a /usr/Autorotate/SETREVERSE.conf  > /dev/null
+
 
 

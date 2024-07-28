@@ -62,7 +62,9 @@ sudo apt-get install libnotify-bin
 sudo apt-get install onboard
 sudo apt-get install xdotool
 sudo apt-get install iio-sensor-proxy
-sudo apt-get install  zenity
+sudo apt-get install zenity
+sudo apt-get install libqt5virtualkeyboard5 qtvirtualkeyboard-plugin maliit-keyboard
+
 
 while true
 do
@@ -188,6 +190,7 @@ sudo cp ./Payload/Autorotate_toggle.sh /usr/bin/
 sudo cp ./Payload/Autorotate_pos.sh /usr/bin/
 sudo cp ./Payload/Autorotate_rot.sh /usr/bin/
 sudo cp ./Payload/Autorotate_clean.sh /usr/bin/
+sudo cp ./Payload/virtualkbd.conf /etc/sddm.conf.d
 cp ./Payload/Autorotate.desktop  $HOME/Desktop
 
 #finish config
