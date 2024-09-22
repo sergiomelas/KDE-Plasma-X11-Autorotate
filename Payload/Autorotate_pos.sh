@@ -20,7 +20,7 @@ MLEFT=$HOME/.autorotate/.mleft            #Toggle last rotation left
 MRIGHT=$HOME/.autorotate/.mright          #Toggle last rotation right
 MDOWN=$HOME/.autorotate/.mdown            #Toggle last rotation down
 
-TOGGLE=$HOME/.autorotate/.toggle         #Toggle rotation on off
+TOGGLE=$HOME/.autorotate/.toggle          #Toggle rotation on off
 
 echo run
 
@@ -130,8 +130,6 @@ do
    fi
 
    sleep 0.1
-   if [ ! -e $TOGGLE ];
-        then
-        exit 0
-   fi
 done
+echo done
+

@@ -276,5 +276,7 @@ do
 
 done
 
+killall Autorotate_pos.sh
+
 
 
