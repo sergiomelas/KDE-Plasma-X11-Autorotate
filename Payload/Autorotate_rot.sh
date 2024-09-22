@@ -249,6 +249,8 @@ do
             echo RORATION COMPLETE
             rm $MROT
             sleep 2
+            #reset mouse that somtimes get stuck
+            xdotool mouseup 3
 
         fi
      fi

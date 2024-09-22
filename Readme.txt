@@ -84,3 +84,5 @@ V2.3  2024-06-29
   -Corrected bug on touch screen while activated not horizontally
 V2.4  2024-07-28
   -Added Virtual Keyboard for loging and lockscreen
+V2.5  2024-09-22
+  -Added mouse get stuck workaround and remove spurious bash processes creation
