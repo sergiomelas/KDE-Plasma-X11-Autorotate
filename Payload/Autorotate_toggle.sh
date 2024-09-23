@@ -19,6 +19,12 @@ MLEFT=$HOME/.autorotate/.mleft                #Toggle last rotation left
 MRIGHT=$HOME/.autorotate/.mright              #Toggle last rotation right
 MDOWN=$HOME/.autorotate/.mdown                #Toggle last rotation down
 
+SCREEN=$( cat /usr/Autorotate/SCREEN.conf )
+TOUCHSCREEN=$( cat /usr/Autorotate/TOUCHSCREEN.conf )
+PEN=$( cat /usr/Autorotate/PEN.conf )
+ERASER=$( cat /usr/Autorotate/ERASER.conf )
+
+
 
 if [ -e $MTOGGLE ];
     then
@@ -107,6 +113,13 @@ if [ -e $TOGGLE ]; then
     paplay $SNDoff &
     rm $TOGGLE
     rm $MTOGGLE
+
+    #reset mouse and touchscreen that somtimes get stuck
+    xdotool mouseup 3
+    xinput --map-to-output "$TOUCHSCREEN" "$SCREEN"
+    xinput --map-to-output "$PEN" "$SCREEN"
+    xinput --map-to-output "$ERASER" "$SCREEN"
+
     exit 0
 fi
 

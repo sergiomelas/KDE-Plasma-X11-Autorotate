@@ -6,6 +6,7 @@
 
 #########################################################################################
 #SCREEN: Update this according to output form command: xrandr|grep "connected primary"
+#In multimonitor setup choose the screen atthached to the laptop
 # xxxx connected primary ......
 #SCREEN="xxxx"
 SCREEN="eDP"

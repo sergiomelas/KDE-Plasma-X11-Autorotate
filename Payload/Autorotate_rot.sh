@@ -75,6 +75,13 @@ do
                #Kill on screen keyboard
                killall onboard
 
+               #reset mouse and touchscreen that somtimes get stuck
+               xdotool mouseup 3
+               xinput --map-to-output "$TOUCHSCREEN" "$SCREEN"
+               xinput --map-to-output "$PEN" "$SCREEN"
+               xinput --map-to-output "$ERASER" "$SCREEN"
+
+
                #rotate display, touchscreen, pen and eraser
                xrandr --output $SCREEN  --rotate left &
                xinput set-prop "$TOUCHSCREEN"    "$TRANSFORM" 0 -1 1 1 0 0 0 0 1
@@ -121,6 +128,13 @@ do
                killall plank
                #Kill on screen keyboard
                killall onboard
+
+               #reset mouse and touchscreen that somtimes get stuck
+               xdotool mouseup 3
+               xinput --map-to-output "$TOUCHSCREEN" "$SCREEN"
+               xinput --map-to-output "$PEN" "$SCREEN"
+               xinput --map-to-output "$ERASER" "$SCREEN"
+
 
                #rotate display, touchscreen, pen and eraser
                xrandr --output $SCREEN --rotate right &
@@ -169,6 +183,12 @@ do
                #Kill on screen keyboard
                killall onboard
 
+               #reset mouse and touchscreen that somtimes get stuck
+               xdotool mouseup 3
+               xinput --map-to-output "$TOUCHSCREEN" "$SCREEN"
+               xinput --map-to-output "$PEN" "$SCREEN"
+               xinput --map-to-output "$ERASER" "$SCREEN"
+
                #rotate display, touchscreen, pen and eraser
                xrandr --output $SCREEN --rotate inverted &
                xinput set-prop "$TOUCHSCREEN"    "$TRANSFORM" -1 0 1 0 -1 1 0 0 1
@@ -211,6 +231,12 @@ do
                #Kill on screen keyboard
                killall onboard
 
+               #reset mouse and touchscreen that somtimes get stuck
+               xdotool mouseup 3
+               xinput --map-to-output "$TOUCHSCREEN" "$SCREEN"
+               xinput --map-to-output "$PEN" "$SCREEN"
+               xinput --map-to-output "$ERASER" "$SCREEN"
+
                #Rotate Screen and Touch and pen to Normal
                xrandr --output $SCREEN --rotate normal &
                xinput set-prop "$TOUCHSCREEN"    "$TRANSFORM" 1 0 0 0 1 0 0 0 1
@@ -249,8 +275,6 @@ do
             echo RORATION COMPLETE
             rm $MROT
             sleep 2
-            #reset mouse that somtimes get stuck
-            xdotool mouseup 3
 
         fi
      fi
