@@ -14,7 +14,7 @@ echo  " "
 
 echo  ""
 
-if [ $XDG_SESSION_TYPE  != 'x11' ] || [ $DESKTOP_SESSION != 'plasma' ]
+if [ $XDG_SESSION_TYPE  != 'x11' ] || ( [ $DESKTOP_SESSION != 'plasma' ] && [ $DESKTOP_SESSION != 'plasmax11' ] )
 then
   echo  " "
   echo  " ##################################################################"

@@ -72,6 +72,7 @@ do
                #Kill Dock
                killall latte-dock
                killall plank
+               killall cairo-dock
                #Kill on screen keyboard
                killall onboard
 
@@ -126,6 +127,7 @@ do
                #Kill Dock
                killall latte-dock
                killall plank
+               killall cairo-dock
                #Kill on screen keyboard
                killall onboard
 
@@ -180,6 +182,7 @@ do
                #Kill Dock
                killall latte-dock
                killall plank
+               killall cairo-dock
                #Kill on screen keyboard
                killall onboard
 
@@ -228,6 +231,7 @@ do
                #Kill Dock
                killall latte-dock
                killall plank
+               killall cairo-dock
                #Kill on screen keyboard
                killall onboard
 
@@ -246,6 +250,7 @@ do
                #Start dock
                kstart5 latte-dock --replace &
                kstart5 plank &
+               kstart5 cairo-dock &
 
                #Restore keyboard backlight
                if [[ $kbbrit -gt 0 ]]

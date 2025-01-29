@@ -16,7 +16,7 @@ Installation Instructions:
   -Unzip the file
   -Edit "Autorotate_conf.sh" configuration file in the Payload sub directory, to match the config of your system
   -Open terminal
-  -Run the install.sh script (Just drag and drop file the rest is automatic)
+  -Run the Run-me.sh script (Just double click, rest is automatic)
   -Reboot
   -Install tablet support for KDE
     sudo apt-get install kde-config-tablet
@@ -33,7 +33,12 @@ Removal Instructions:
 
   -To unistall run remove.sh
 
-Note: this software works only for Kde Plasma with X11 session
+Note: this software works only for Kde Plasma with X11 session, it suposses that only one dock is installed,
+supported dock:
+-Plank
+-Cairo Dock
+-Latte doc
+
 
 ##################################################################################################################
 Change log:
@@ -86,3 +91,6 @@ V2.4  2024-07-28
   -Added Virtual Keyboard for loging and lockscreen
 V2.5  2024-09-22
   -Added mouse get stuck workaround and remove spurious bash processes creation
+V2.6  2025-01-29
+  -Make it compatible with Plasma 6
+  -Added support for cairo dock (only doc working properly with plasma 6)
