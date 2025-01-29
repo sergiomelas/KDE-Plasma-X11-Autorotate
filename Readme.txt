@@ -93,4 +93,4 @@ V2.5  2024-09-22
   -Added mouse get stuck workaround and remove spurious bash processes creation
 V2.6  2025-01-29
   -Make it compatible with Plasma 6
-  -Added support for cairo dock (only doc working properly with plasma 6)
+  -Added support for cairo dock (only dock working properly with plasma 6)
