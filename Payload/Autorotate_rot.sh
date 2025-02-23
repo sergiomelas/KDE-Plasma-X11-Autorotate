@@ -49,6 +49,10 @@ do
       sleep 0.1  #Timer to free cpu
       if [ -e $MROT ] #If rotation not done
       then
+
+         #Activate left click
+         xsetwacom --set   "$TOUCHSCREEN"    Gesture off
+
          sleep 1  #Timer to be shure rotation is not a wiggle
          if [ -e $MROT ] #If rotation confirmed
          then
