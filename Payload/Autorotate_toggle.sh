@@ -40,8 +40,8 @@ if [ ! -e $TOGGLE ]; then
     touch $TOGGLE
 
     #Start up rotation sensor and rotator
-    kstart5  '/usr/bin/Autorotate_pos.sh'  &
-    kstart5  '/usr/bin/Autorotate_rot.sh'  &
+    kstart5 setsid '/usr/bin/Autorotate_pos.sh'  &
+    kstart5 setsid '/usr/bin/Autorotate_rot.sh'  &
 
 
     paplay $SNDon &

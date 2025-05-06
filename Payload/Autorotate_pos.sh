@@ -130,6 +130,9 @@ do
    fi
 
    sleep 0.1
+   if [ ! -e $TOGGLE ]; then
+       kill -- -$$
+   fi
 done
 echo done
 
